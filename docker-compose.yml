@@ -19,7 +19,7 @@ services:
         - redis_cache
   mysql:
     container_name: kovatu_db
-    image:  mysql:latest
+    image:  mysql:8.1.0
     env_file:
       - .env
     ports:
@@ -29,7 +29,7 @@ services:
     environment:
       - MYSQL_USER=${DB_USER}
       - MYSQL_ROOT_PASSWORD=${DB_PASS}
-      - MYSQL_PASSWORD=@&8*423fsfdgggfdsg
+      - MYSQL_PASSWORD=${DB_PASS}
       - MYSQL_ALLOW_EMPTY_PASSWORD=no
 
   redis_queue:

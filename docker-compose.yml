@@ -15,8 +15,8 @@ services:
         - kovatu_net
     depends_on:
         - mysql
-        - redis_queue
-        - redis_cache
+        # - redis_queue
+        # - redis_cache
   mysql:
     container_name: kovatu_db
     image:  mysql:8.1.0
@@ -32,18 +32,18 @@ services:
       - MYSQL_PASSWORD=${DB_PASS}
       - MYSQL_ALLOW_EMPTY_PASSWORD=no
 
-  redis_queue:
-    container_name: kovatu_queue
-    image: redis:6.0.12-alpine
-    ports:
-      - 6379:6379
-    networks:
-      - kovatu_net
+  # redis_queue:
+  #   container_name: kovatu_queue
+  #   image: redis:6.0.12-alpine
+  #   ports:
+  #     - 6379:6379
+  #   networks:
+  #     - kovatu_net
 
-  redis_cache:
-    container_name: kovatu_cache
-    image: redis:6.0.12-alpine
-    ports:
-      - 6380:6379
-    networks:
-      - kovatu_net
+  # redis_cache:
+  #   container_name: kovatu_cache
+  #   image: redis:6.0.12-alpine
+  #   ports:
+  #     - 6380:6379
+  #   networks:
+  #     - kovatu_net

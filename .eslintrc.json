@@ -1,0 +1,11 @@
+ {
+      "globals": {
+         "__dirname": true
+      },
+      "overrides": [{
+         "parserOptions": {
+            "project": "**/tsconfig.json",
+            "sourceType": "module"
+         },
+      }]
+  }

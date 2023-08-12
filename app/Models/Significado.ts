@@ -1,5 +1,4 @@
 import { BaseModel, BelongsTo, belongsTo, column } from '@ioc:Adonis/Lucid/Orm';
-import Lingua from './Lingua';
 import Utilizador from './Utilizador';
 import ClasseGramatical from './ClasseGramatical';
 import Palavra from './Palavra';

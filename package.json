@@ -11,6 +11,15 @@
     "format": "prettier --write  app/** "
   },
   "eslintConfig": {
+    "globals": {
+         "__dirname": true
+      },
+      "overrides": [{
+         "parserOptions": {
+            "project": "**/tsconfig.json",
+            "sourceType": "module"
+         }
+      }],
     "extends": [
       "plugin:adonis/typescriptApp",
       "prettier"

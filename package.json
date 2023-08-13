@@ -11,10 +11,12 @@
     "format": "prettier --write  app/** "
   },
   "eslintConfig": {
+  
     "globals": {
          "__dirname": true
       },
       "overrides": [{
+          "files": ["*.ts"],
          "parserOptions": {
             "project": "**/tsconfig.json",
             "sourceType": "module"

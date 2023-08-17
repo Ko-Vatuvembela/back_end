@@ -18,8 +18,8 @@
 |
 */
 
-import Route from '@ioc:Adonis/Core/Route'
-
-Route.get('/', async () => {
-  return { hello: 'world' }
-})
+import Route from '@ioc:Adonis/Core/Route';
+import { userRoutes } from './routes/User.routes';
+Route.group(() => {
+  userRoutes();
+}).prefix('/api');

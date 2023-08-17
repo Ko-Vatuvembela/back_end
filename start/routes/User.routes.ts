@@ -1,6 +1,6 @@
-import Route from '@ioc:Adonis/Core/Route'
+import Route from '@ioc:Adonis/Core/Route';
 
 export const userRoutes = () =>
   Route.group(() => {
-    Route.post('/', 'UsersController.createUser')
-  }).prefix('/user')
+    Route.post('/', 'UsersController.createUser');
+  }).prefix('/user');

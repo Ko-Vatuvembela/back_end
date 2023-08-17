@@ -2,9 +2,11 @@ import Database from '@ioc:Adonis/Lucid/Database';
 import Utilizador from 'App/Models/Utilizador';
 import { UserType } from 'App/types/types';
 
+const TABLE_NAME = 'uilizadores';
+
 export class UserServices {
   public checkIfPKExists = async (uid: string) => {
-    Database.from(Utilizador.table).select('username').where({ username: uid });
+    Database.from(TABLE_NAME).select('username').where({ username: uid });
   };
 
   public getUserByPK = async (uid: string) => {
@@ -15,7 +17,7 @@ export class UserServices {
     return null;
   };
 
-  public newUser = async (utilizador: Utilizador) => {
+  public createUser = async (utilizador: Utilizador) => {
     Utilizador.create(utilizador);
   };
 
@@ -30,9 +32,9 @@ export class UserServices {
   public mapUserType = (user: Utilizador) => {
     const mappedUser: UserType = {
       email: user.email,
-      name: user.nome,
-      photo: user.foto,
-      surname: user.sobrenome,
+      nome: user.nome,
+      foto: user.foto,
+      sobrenome: user.sobrenome,
       username: user.username,
     };
     return mappedUser;

@@ -9,6 +9,7 @@ export default class BaseValidator {
     maxLength: 'O campo {{field}} deve conter no máximo {{options.minLength}} caracteres',
     required: 'O campo {{field}} é obrigatório',
     unique: 'O campo {{field}} é único e é existente',
+    regex: 'O campo {{field}} ñ condiz com a regex',
   };
   public reporter = validator.reporters.api;
   public cacheKey = this.ctx.routeKey;

@@ -22,7 +22,7 @@ export default class Proverbio extends BaseModel {
   public utilizadorFK: string;
 
   @belongsTo(() => Utilizador, { foreignKey: 'utilizadorFK' })
-  public username: BelongsTo<typeof Utilizador>;
+  public uid: BelongsTo<typeof Utilizador>;
 
   @belongsTo(() => Lingua, { foreignKey: 'linguaFK' })
   public idLingua: BelongsTo<typeof Lingua>;

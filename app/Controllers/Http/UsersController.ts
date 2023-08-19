@@ -2,6 +2,7 @@ import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext';
 import UserValidator from 'App/Validators/UserValidator';
 import { UserServices } from 'App/Services/UserServices';
 import Utilizador from 'App/Models/Utilizador';
+import { v4 } from 'uuid';
 import UsernameValidator from 'App/Validators/UsernameValidator';
 
 const userServices = new UserServices();
@@ -9,9 +10,10 @@ const userServices = new UserServices();
 export default class UsersController {
   public createUser = async (ctx: HttpContextContract) => {
     const { response, request } = ctx;
-    const payload = (await request.validate(UserValidator)) as Utilizador;
-    await userServices.createUser(payload);
-    response.created();
+    let payload = await request.validate(UserValidator);
+    const newUser = Object.assign(payload, { uid: v4() }) as Utilizador;
+    await userServices.createUser(newUser);
+    response.created(newUser);
   };
   public getUser = async (ctx: HttpContextContract) => {
     const { response, request } = ctx;

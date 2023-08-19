@@ -18,5 +18,5 @@ export default class Relatorio extends BaseModel {
   public quantidadePostProverbio: number;
 
   @belongsTo(() => Utilizador, { foreignKey: 'utilizadorFK' })
-  public username: BelongsTo<typeof Utilizador>;
+  public uid: BelongsTo<typeof Utilizador>;
 }

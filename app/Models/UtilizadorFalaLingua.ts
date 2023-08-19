@@ -10,7 +10,7 @@ export default class UtilizadorFalaLingua extends BaseModel {
   public linguaFK: string;
 
   @belongsTo(() => Utilizador, { foreignKey: 'utilizadorFK' })
-  public username: BelongsTo<typeof Utilizador>;
+  public uid: BelongsTo<typeof Utilizador>;
 
   @belongsTo(() => Lingua, { foreignKey: 'linguaFK' })
   public idLingua: BelongsTo<typeof Lingua>;

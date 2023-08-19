@@ -11,17 +11,20 @@
     "format": "prettier --write  app/** "
   },
   "eslintConfig": {
-  
     "globals": {
-         "__dirname": true
-      },
-      "overrides": [{
-          "files": ["*.ts"],
-         "parserOptions": {
-            "project": "**/tsconfig.json",
-            "sourceType": "module"
-         }
-      }],
+      "__dirname": true
+    },
+    "overrides": [
+      {
+        "files": [
+          "*.ts"
+        ],
+        "parserOptions": {
+          "project": "**/tsconfig.json",
+          "sourceType": "module"
+        }
+      }
+    ],
     "extends": [
       "plugin:adonis/typescriptApp",
       "prettier"
@@ -54,6 +57,7 @@
     "@japa/runner": "^2.5.1",
     "@types/proxy-addr": "^2.0.0",
     "@types/source-map-support": "^0.5.6",
+    "@types/uuid": "^9.0.2",
     "@typescript-eslint/eslint-plugin": "^5.52.0",
     "adonis-preset-ts": "^2.1.0",
     "eslint": "^8.0.1",
@@ -76,8 +80,10 @@
     "@adonisjs/repl": "^3.1.0",
     "luxon": "^3.4.0",
     "mysql2": "^3.6.0",
+    "phc-bcrypt": "^1.0.8",
     "proxy-addr": "^2.0.7",
     "reflect-metadata": "^0.1.13",
-    "source-map-support": "^0.5.21"
+    "source-map-support": "^0.5.21",
+    "uuid": "^9.0.0"
   }
 }

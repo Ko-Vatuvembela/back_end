@@ -1,4 +1,5 @@
-import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm';
+import { BaseModel, beforeSave, column } from '@ioc:Adonis/Lucid/Orm';
+import Hash from '@ioc:Adonis/Core/Hash';
 
 export default class Utilizador extends BaseModel {
   public static get table() {
@@ -6,7 +7,7 @@ export default class Utilizador extends BaseModel {
   }
 
   @column({ isPrimary: true })
-  public username: string;
+  public uid: string;
 
   @column()
   public nome: string;
@@ -22,4 +23,11 @@ export default class Utilizador extends BaseModel {
 
   @column()
   public password: string;
+
+  @beforeSave()
+  public static async hashPassword(utilizador: Utilizador) {
+    if (utilizador.$dirty.password) {
+      utilizador.password = await Hash.make(utilizador.password);
+    }
+  }
 }

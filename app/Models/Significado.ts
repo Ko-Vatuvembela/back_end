@@ -23,7 +23,7 @@ export default class Significado extends BaseModel {
   public utilizadorFK: string;
 
   @belongsTo(() => Utilizador, { foreignKey: 'utilizadorFK' })
-  public username: BelongsTo<typeof Utilizador>;
+  public uid: BelongsTo<typeof Utilizador>;
 
   @belongsTo(() => ClasseGramatical, { foreignKey: 'classeGramaticalFK' })
   public idClasseGramatical: BelongsTo<typeof ClasseGramatical>;

@@ -9,11 +9,11 @@ export default class extends BaseSchema {
       table.text('poema');
       table.text('explicacao');
       table.date('data');
-      table.string('utilizador_fk', 64);
+      table.string('utilizador_fk', 40);
       table.string('lingua_fk', 64);
       table
         .foreign('utilizador_fk')
-        .references('utilizadores.username')
+        .references('utilizadores.uid')
         .onDelete('CASCADE')
         .onUpdate('CASCADE');
       table

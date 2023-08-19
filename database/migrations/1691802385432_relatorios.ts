@@ -5,14 +5,14 @@ export default class extends BaseSchema {
 
   public async up() {
     this.schema.createTable(this.tableName, (table) => {
-      table.string('utilizador_fk', 64).primary();
+      table.string('utilizador_fk', 40).primary();
       table.integer('quantidade_post_gramatica').unsigned().defaultTo(0);
       table.integer('quantidade_post_poema').unsigned().defaultTo(0);
       table.integer('quantidade_post_dicionario').unsigned().defaultTo(0);
       table.integer('quantidade_post_proverbio').unsigned().defaultTo(0);
       table
         .foreign('utilizador_fk')
-        .references('utilizadores.username')
+        .references('utilizadores.uid')
         .onDelete('CASCADE')
         .onUpdate('CASCADE');
     });

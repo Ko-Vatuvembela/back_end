@@ -9,7 +9,7 @@ export default class extends BaseSchema {
       table.string('significado', 100);
       table.string('exemplo', 255);
       table.string('classe_gramatical_fk', 64);
-      table.string('utilizador_fk', 64);
+      table.string('utilizador_fk', 40);
       table.string('palavra_fk', 64);
       table
         .foreign('classe_gramatical_fk')
@@ -18,7 +18,7 @@ export default class extends BaseSchema {
         .onUpdate('CASCADE');
       table
         .foreign('utilizador_fk')
-        .references('utilizadores.username')
+        .references('utilizadores.uid')
         .onDelete('CASCADE')
         .onUpdate('CASCADE');
       table

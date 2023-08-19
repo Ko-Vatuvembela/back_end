@@ -3,8 +3,7 @@ import UserValidator from 'App/Validators/UserValidator';
 import { UserServices } from 'App/Services/UserServices';
 import Utilizador from 'App/Models/Utilizador';
 import { v4 } from 'uuid';
-import UsernameValidator from 'App/Validators/UsernameValidator';
-
+import UUIDValidator from 'App/Validators/UUIDValidator';
 const userServices = new UserServices();
 
 export default class UsersController {
@@ -15,10 +14,10 @@ export default class UsersController {
     await userServices.createUser(newUser);
     response.created(newUser);
   };
-  public getUser = async (ctx: HttpContextContract) => {
+  public findUser = async (ctx: HttpContextContract) => {
     const { response, request } = ctx;
-    const username = String(await request.validate(UsernameValidator));
-    const user = await userServices.getUserByPK(username);
+    const uid = String((await request.validate(UUIDValidator)).uuid);
+    const user = await userServices.getUserByPK(uid);
     if (user) {
       response.ok(user);
     } else {

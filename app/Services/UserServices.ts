@@ -23,7 +23,7 @@ export class UserServices {
   };
 
   public updateUser = async (uid: string, utilizador: UpdateUserType) => {
-    Utilizador.updateOrCreate({ uid }, utilizador);
+    return Utilizador.updateOrCreate({ uid }, utilizador);
   };
 
   public deleteUser = async (uid: string) => {

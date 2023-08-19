@@ -16,5 +16,8 @@ export default class UpdateUserValidator extends BaseValidator {
       rules.normalizeEmail({ allLowercase: true }),
       rules.trim(),
     ]),
+    params: schema.object().members({
+      uid: schema.string([rules.uuid({ version: 4 }), rules.escape(), rules.trim()]),
+    }),
   });
 }

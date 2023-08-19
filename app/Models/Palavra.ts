@@ -1,0 +1,16 @@
+import { BaseModel, column, belongsTo, BelongsTo } from '@ioc:Adonis/Lucid/Orm';
+import Lingua from './Lingua';
+
+export default class Palavra extends BaseModel {
+  @column({ isPrimary: true })
+  public idPalavra: string;
+
+  @column()
+  public palavra: string;
+
+  @column()
+  public linguaFK: string;
+
+  @belongsTo(() => Lingua, { foreignKey: 'linguaFK' })
+  public idLingua: BelongsTo<typeof Lingua>;
+}

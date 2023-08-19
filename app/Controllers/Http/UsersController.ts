@@ -4,8 +4,7 @@ import UpdateUserValidator from 'App/Validators/UpdateUserValidator';
 import { UserServices } from 'App/Services/UserServices';
 import { v4 } from 'uuid';
 import UUIDValidator from 'App/Validators/UUIDValidator';
-import { UpdateUserType, UserType } from 'App/types/types';
-import { debug } from 'App/utils/utils';
+import { UserType } from 'App/types/types';
 const userServices = new UserServices();
 
 export default class UsersController {

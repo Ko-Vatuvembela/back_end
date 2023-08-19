@@ -1,8 +1,9 @@
 import Database from '@ioc:Adonis/Lucid/Database';
 import Utilizador from 'App/Models/Utilizador';
-import { UserType } from 'App/types/types';
+import { UpdateUserType, UserType } from 'App/types/types';
+import { mapUserType } from 'App/utils/utils';
 
-const TABLE_NAME = 'uilizadores';
+const TABLE_NAME = Utilizador.table;
 
 export class UserServices {
   public checkIfPKExists = async (uid: string) => {
@@ -10,33 +11,22 @@ export class UserServices {
   };
 
   public getUserByPK = async (uid: string) => {
-    const payload = await Utilizador.findBy('username', uid);
+    const payload = await Utilizador.findBy('uid', uid);
     if (payload) {
-      return this.mapUserType(payload);
+      return mapUserType(payload);
     }
     return null;
   };
 
-  public createUser = async (utilizador: Utilizador) => {
+  public createUser = async (utilizador: UserType) => {
     Utilizador.create(utilizador);
   };
 
-  public updateUser = async (uid: string, utilizador: Utilizador) => {
-    Utilizador.updateOrCreate({ username: uid }, utilizador);
+  public updateUser = async (uid: string, utilizador: UpdateUserType) => {
+    Utilizador.updateOrCreate({ uid }, utilizador);
   };
 
   public deleteUser = async (uid: string) => {
     Database.from(Utilizador.table).delete().where({ username: uid });
-  };
-
-  public mapUserType = (user: Utilizador) => {
-    const mappedUser: UserType = {
-      email: user.email,
-      nome: user.nome,
-      foto: user.foto,
-      sobrenome: user.sobrenome,
-      username: user.username,
-    };
-    return mappedUser;
   };
 }

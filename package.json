@@ -77,6 +77,7 @@
   "dependencies": {
     "@adonisjs/core": "^5.8.0",
     "@adonisjs/lucid": "^18.4.0",
+    "@adonisjs/mail": "^8.2.1",
     "@adonisjs/repl": "^3.1.0",
     "@faker-js/faker": "^8.0.2",
     "luxon": "^3.4.0",

@@ -20,6 +20,8 @@
 
 import Route from '@ioc:Adonis/Core/Route';
 import { userRoutes } from './routes/User.routes';
+import { mailRoutes } from './routes/Mail.routes';
 Route.group(() => {
   userRoutes();
+  mailRoutes();
 }).prefix('/api');

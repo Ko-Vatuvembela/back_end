@@ -10,6 +10,10 @@ export class UserServices {
     Database.from(TABLE_NAME).select('username').where({ username: uid });
   };
 
+  public checkIfEmailExists = async (email: string) => {
+    return Database.from(TABLE_NAME).select('email').where({ email });
+  };
+
   public getUserByPK = async (uid: string) => {
     const payload = await Utilizador.findBy('uid', uid);
     if (payload) {

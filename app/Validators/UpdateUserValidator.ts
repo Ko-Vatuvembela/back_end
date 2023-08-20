@@ -13,7 +13,7 @@ export default class UpdateUserValidator extends BaseValidator {
     password: schema.string.optional([rules.minLength(6), rules.maxLength(255)]),
     email: schema.string.optional([
       rules.email(),
-      rules.normalizeEmail({ allLowercase: true }),
+      rules.normalizeEmail({ allLowercase: true, gmailRemoveDots: true }),
       rules.trim(),
     ]),
     params: schema.object().members({

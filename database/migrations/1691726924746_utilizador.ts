@@ -7,6 +7,7 @@ export default class extends BaseSchema {
     this.schema.createTable(this.tableName, (table) => {
       table.string('uid', 40).primary(),
         table.string('nome', 45),
+        table.boolean('ativada').defaultTo(false),
         table.string('sobrenome', 45),
         table.string('email', 45),
         table.string('foto', 255),

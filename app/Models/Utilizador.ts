@@ -14,6 +14,9 @@ export default class Utilizador extends BaseModel {
   public nome: string;
 
   @column()
+  public ativada: boolean;
+
+  @column()
   public sobrenome: string;
 
   @column()

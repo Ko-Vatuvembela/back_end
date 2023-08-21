@@ -8,7 +8,12 @@ const userServices = new UserServices();
 export default class AuthController {
   public login = async (ctx: HttpContextContract) => {
     const { request, response } = ctx;
-    response.unauthorized();
+    const payload = await request.validate(LoginValidator);
+    const email = payload.email as string;
+    const password = payload.password as string;
+
+    response.ok({ email, password });
+    // response.unauthorized();
   };
   public logout = async (ctx: HttpContextContract) => {
     // const { response, auth } = ctx;

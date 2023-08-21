@@ -11,6 +11,7 @@ export default class UsersController {
   public createUser = async (ctx: HttpContextContract) => {
     const { response, request } = ctx;
     let payload = await request.validate(UserValidator);
+    const email = payload.email as string;
 
     const newUser: UserType = {
       uid: v4(),
@@ -18,10 +19,14 @@ export default class UsersController {
       sobrenome: payload.sobrenome,
       password: payload.password,
       foto: payload.foto,
-      email: payload.email,
+      email,
     };
-    await userServices.createUser(newUser);
-    response.created(newUser);
+
+    if (await userServices.checkIfEmailExists(email)) {
+      response.conflict({ message: `O email ${email} já existe` });
+      return;
+    }
+    response.created(await userServices.createUser(newUser));
   };
   public findUser = async (ctx: HttpContextContract) => {
     const { response, request } = ctx;

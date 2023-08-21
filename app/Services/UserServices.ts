@@ -13,7 +13,9 @@ export class UserServices {
   public checkIfEmailExists = async (email: string) => {
     return Database.from(TABLE_NAME).select('email').where({ email });
   };
-
+  public getUserPKByEmail = async (email: string) => {
+    return await Database.from(TABLE_NAME).select('uid').where('email', email)[0];
+  };
   public getUserByPK = async (uid: string) => {
     const payload = await Utilizador.findBy('uid', uid);
     if (payload) {
@@ -23,7 +25,8 @@ export class UserServices {
   };
 
   public createUser = async (utilizador: UserType) => {
-    Utilizador.create(utilizador);
+    const { $attributes } = await Utilizador.create(utilizador);
+    return $attributes;
   };
 
   public updateUser = async (uid: string, utilizador: UpdateUserType) => {

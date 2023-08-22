@@ -23,7 +23,7 @@ export default class ExceptionHandler extends HttpExceptionHandler {
   }
   public async handle(error: any, ctx: HttpContextContract) {
     const { response } = ctx;
-    if (error.code === 'E_INVALID_AUTH_PASSWORD' || error.code === 'E_UNAUTHORIZED_ACCESS') {
+    if (error.code === 'E_INVALID_AUTH_PASSWORD') {
       return response.unauthorized();
     } else if (error.code === 'E_VALIDATION_FAILURE') {
       return response.unprocessableEntity(error.messages.errors);

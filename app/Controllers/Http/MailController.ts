@@ -13,7 +13,7 @@ export default class MailController {
     const email = String((await request.validate(MailValidator)).email);
     let message = `O código de confirmação foi enviado para ${email}`;
     const user = await userServices.checkIfEmailExists(email);
-    if (user.length > 0) {
+    if (user) {
       const confirmationCode = getRandomNumbers();
       Promise.all([
         await Database.from(MailVerification.table).delete().where('email', email),
@@ -30,7 +30,7 @@ export default class MailController {
     const { email, verificationCode } = await request.validate(ConfirmationCodeValidator);
 
     const user = await userServices.checkIfEmailExists(String(email));
-    if (user.length > 0) {
+    if (user) {
       const code = await MailVerification.findBy('verification_code', verificationCode);
       if (code) {
         if (code.verificationCode === verificationCode) {

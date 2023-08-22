@@ -5,6 +5,8 @@ import { UserServices } from 'App/Services/UserServices';
 import { v4 } from 'uuid';
 import UUIDValidator from 'App/Validators/UUIDValidator';
 import { UserType } from 'App/types/types';
+import Utilizador from 'App/Models/Utilizador';
+import { mapUserType } from 'App/utils/utils';
 const userServices = new UserServices();
 
 export default class UsersController {
@@ -37,6 +39,10 @@ export default class UsersController {
     } else {
       response.notFound();
     }
+  };
+  public getProfile = async ({ response, auth }: HttpContextContract) => {
+    const user = mapUserType(auth.user as Utilizador);
+    response.ok(user);
   };
   public deleteUser = async (ctx: HttpContextContract) => {
     const { response, request } = ctx;

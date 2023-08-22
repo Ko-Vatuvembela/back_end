@@ -18,8 +18,8 @@ export default class AuthController {
   };
 
   public logout = async (ctx: HttpContextContract) => {
-    // const { response, auth } = ctx;
-    // await auth.use('api').logout();
-    // response.unauthorized();
+    const { response, auth } = ctx;
+    await auth.use('api').revoke();
+    response.ok({ message: 'Ubita usuku kyambote' });
   };
 }

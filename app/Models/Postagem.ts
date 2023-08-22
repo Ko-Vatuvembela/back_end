@@ -4,16 +4,16 @@ import Lingua from './Lingua';
 
 export default class Postagem extends BaseModel {
   @column({ isPrimary: true })
-  public idPostagem: string;
+  public idPostagem: number;
 
   @column()
   public conteudo: string;
 
   @column()
-  public utilizadorFK: string;
+  public utilizadorFK: number;
 
   @column()
-  public linguaFK: string;
+  public linguaFK: number;
 
   @belongsTo(() => Utilizador, { foreignKey: 'utilizadorFK' })
   public uid: BelongsTo<typeof Utilizador>;

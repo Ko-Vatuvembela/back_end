@@ -8,7 +8,7 @@ export default class Utilizador extends BaseModel {
   }
 
   @column({ isPrimary: true })
-  public uid: string;
+  public uid: number;
 
   @column()
   public nome: string;

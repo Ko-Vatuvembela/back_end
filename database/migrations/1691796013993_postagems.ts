@@ -5,20 +5,20 @@ export default class extends BaseSchema {
 
   public async up() {
     this.schema.createTable(this.tableName, (table) => {
-      table.string('id_postagem', 64).primary(),
-        table.string('utilizador_fk', 36),
-        table.string('lingua_fk', 64);
-      table.text('conteudo'),
+      table.increments('id_postagem').unsigned().primary(),
         table
-          .foreign('utilizador_fk')
+          .integer('utilizador_fk')
+          .unsigned()
           .references('utilizadores.uid')
           .onDelete('CASCADE')
+          .onUpdate('CASCADE'),
+        table
+          .integer('lingua_fk')
+          .unsigned()
+          .references('linguas.id_lingua')
+          .onDelete('CASCADE')
           .onUpdate('CASCADE');
-      table
-        .foreign('lingua_fk')
-        .references('linguas.id_lingua')
-        .onDelete('CASCADE')
-        .onUpdate('CASCADE');
+      table.text('conteudo');
     });
   }
 

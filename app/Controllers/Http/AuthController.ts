@@ -14,12 +14,9 @@ export default class AuthController {
 
     const uid = await userServices.getUserPKByEmail(email);
     const token = await auth.attempt(uid, password);
-    if (token.type) {
-      response.ok(token);
-      return;
-    }
-    response.unauthorized();
+    response.ok(token);
   };
+
   public logout = async (ctx: HttpContextContract) => {
     // const { response, auth } = ctx;
     // await auth.use('api').logout();

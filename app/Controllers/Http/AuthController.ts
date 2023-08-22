@@ -1,7 +1,6 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext';
 import LoginValidator from 'App/Validators/LoginValidator';
 import { UserServices } from 'App/Services/UserServices';
-import { debug } from 'App/utils/utils';
 
 const userServices = new UserServices();
 

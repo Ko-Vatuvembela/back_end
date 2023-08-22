@@ -1,7 +1,7 @@
 import Database from '@ioc:Adonis/Lucid/Database';
 import Utilizador from 'App/Models/Utilizador';
 import { UpdateUserType, UserType } from 'App/types/types';
-import { debug, mapUserType } from 'App/utils/utils';
+import { mapUserType } from 'App/utils/utils';
 
 const TABLE_NAME = Utilizador.table;
 

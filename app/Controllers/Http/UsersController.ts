@@ -5,12 +5,15 @@ import { UserServices } from 'App/Services/UserServices';
 import { v4 } from 'uuid';
 import UUIDValidator from 'App/Validators/UUIDValidator';
 import { UserType } from 'App/types/types';
+import Utilizador from 'App/Models/Utilizador';
+import { mapUserType } from 'App/utils/utils';
 const userServices = new UserServices();
 
 export default class UsersController {
   public createUser = async (ctx: HttpContextContract) => {
     const { response, request } = ctx;
     let payload = await request.validate(UserValidator);
+    const email = payload.email as string;
 
     const newUser: UserType = {
       uid: v4(),
@@ -18,10 +21,14 @@ export default class UsersController {
       sobrenome: payload.sobrenome,
       password: payload.password,
       foto: payload.foto,
-      email: payload.email,
+      email,
     };
-    await userServices.createUser(newUser);
-    response.created(newUser);
+
+    if (await userServices.checkIfEmailExists(email)) {
+      response.conflict({ message: `O email ${email} já existe` });
+      return;
+    }
+    response.created(await userServices.createUser(newUser));
   };
   public findUser = async (ctx: HttpContextContract) => {
     const { response, request } = ctx;
@@ -32,6 +39,10 @@ export default class UsersController {
     } else {
       response.notFound();
     }
+  };
+  public getProfile = async ({ response, auth }: HttpContextContract) => {
+    const user = mapUserType(auth.user as Utilizador);
+    response.ok(user);
   };
   public deleteUser = async (ctx: HttpContextContract) => {
     const { response, request } = ctx;

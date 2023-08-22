@@ -17,14 +17,13 @@ export const createFakeUser = (): UserType => ({
   sobrenome: faker.person.lastName(),
 });
 export const mapUserType = (user: Utilizador) => {
-  const { email, nome, sobrenome, password, foto, uid } = user;
+  const { email, nome, sobrenome, foto, uid } = user;
   const mappedUser: UserType = {
     email,
     nome,
     foto,
     sobrenome,
     uid,
-    password,
   };
   return mappedUser;
 };

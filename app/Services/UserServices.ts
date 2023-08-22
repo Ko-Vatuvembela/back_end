@@ -10,10 +10,14 @@ export class UserServices {
     Database.from(TABLE_NAME).select('username').where({ username: uid });
   };
 
-  public checkIfEmailExists = async (email: string) => {
-    return Database.from(TABLE_NAME).select('email').where({ email });
+  public checkIfEmailExists = async (email: string): Promise<boolean> => {
+    const userEmail = await Database.from(TABLE_NAME).select('email').where({ email });
+    return userEmail.length > 0;
   };
-
+  public getUserPKByEmail = async (email: string) => {
+    const pk = await Database.from(TABLE_NAME).select('uid').where('email', email);
+    return pk[0].uid;
+  };
   public getUserByPK = async (uid: string) => {
     const payload = await Utilizador.findBy('uid', uid);
     if (payload) {
@@ -23,7 +27,8 @@ export class UserServices {
   };
 
   public createUser = async (utilizador: UserType) => {
-    Utilizador.create(utilizador);
+    const { $attributes } = await Utilizador.create(utilizador);
+    return $attributes;
   };
 
   public updateUser = async (uid: string, utilizador: UpdateUserType) => {

@@ -29,15 +29,11 @@ export default class Utilizador extends BaseModel {
   public password: string;
 
   @beforeSave()
-  public static lowerCase(utilizador: Utilizador) {
+  public static async sanitize(utilizador: Utilizador) {
     utilizador.email = utilizador.email.toLocaleLowerCase().trim();
     utilizador.nome = capitalize(utilizador.nome).trim();
     utilizador.sobrenome = capitalize(utilizador.sobrenome).trim();
     utilizador.foto = 'default_foto.jng';
-  }
-  public static async hashPassword(utilizador: Utilizador) {
-    if (utilizador.$dirty.password) {
-      utilizador.password = await Hash.make(utilizador.password);
-    }
+    utilizador.password = await Hash.make(utilizador.password);
   }
 }

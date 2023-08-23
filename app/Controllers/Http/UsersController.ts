@@ -2,7 +2,6 @@ import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext';
 import UserValidator from 'App/Validators/UserValidator';
 import UpdateUserValidator from 'App/Validators/UpdateUserValidator';
 import { UserServices } from 'App/Services/UserServices';
-import { v4 } from 'uuid';
 import UUIDValidator from 'App/Validators/UUIDValidator';
 import { UserType } from 'App/types/types';
 import Utilizador from 'App/Models/Utilizador';
@@ -16,7 +15,6 @@ export default class UsersController {
     const email = payload.email as string;
 
     const newUser: UserType = {
-      uid: v4(),
       nome: payload.nome,
       sobrenome: payload.sobrenome,
       password: payload.password,
@@ -32,7 +30,7 @@ export default class UsersController {
   };
   public findUser = async (ctx: HttpContextContract) => {
     const { response, request } = ctx;
-    const uid = String((await request.validate(UUIDValidator)).params.uid);
+    const uid = Number((await request.validate(UUIDValidator)).params.uid);
     const user = await userServices.getUserByPK(uid);
     if (user) {
       response.ok(user);
@@ -46,7 +44,7 @@ export default class UsersController {
   };
   public deleteUser = async (ctx: HttpContextContract) => {
     const { response, request } = ctx;
-    const uid = String((await request.validate(UUIDValidator)).params.uid);
+    const uid = Number((await request.validate(UUIDValidator)).params.uid);
     const user = await userServices.getUserByPK(uid);
     if (user) {
       userServices.deleteUser(uid);

@@ -6,7 +6,7 @@ import { mapUserType } from 'App/utils/utils';
 const TABLE_NAME = Utilizador.table;
 
 export class UserServices {
-  public checkIfPKExists = async (uid: string) => {
+  public checkIfPKExists = async (uid: number) => {
     Database.from(TABLE_NAME).select('username').where({ username: uid });
   };
 
@@ -18,7 +18,7 @@ export class UserServices {
     const pk = await Database.from(TABLE_NAME).select('uid').where('email', email);
     return pk[0].uid;
   };
-  public getUserByPK = async (uid: string) => {
+  public getUserByPK = async (uid: number) => {
     const payload = await Utilizador.findBy('uid', uid);
     if (payload) {
       return mapUserType(payload);
@@ -31,11 +31,11 @@ export class UserServices {
     return $attributes;
   };
 
-  public updateUser = async (uid: string, utilizador: UpdateUserType) => {
+  public updateUser = async (uid: number, utilizador: UpdateUserType) => {
     return Utilizador.updateOrCreate({ uid }, utilizador);
   };
 
-  public deleteUser = async (uid: string) => {
+  public deleteUser = async (uid: number) => {
     Database.from(Utilizador.table).delete().where({ username: uid });
   };
 }

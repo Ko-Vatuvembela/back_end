@@ -24,8 +24,8 @@ import { mailRoutes } from './routes/Mail.routes';
 import { profileRoutes } from './routes/Profile.routes';
 import { authRoutes } from './routes/Auth.routes ';
 Route.group(() => {
-  publicRoutes();
   mailRoutes();
   authRoutes();
+  publicRoutes();
   profileRoutes();
 }).prefix('/api');

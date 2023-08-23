@@ -5,11 +5,11 @@ export default class extends BaseSchema {
 
   public async up() {
     this.schema.createTable(this.tableName, (table) => {
-      table.string('id_palavra', 64).primary();
+      table.increments('id_palavra').unsigned().primary();
       table.string('palavra', 45);
-      table.string('lingua_fk', 64);
       table
-        .foreign('lingua_fk')
+        .integer('lingua_fk', 64)
+        .unsigned()
         .references('linguas.id_lingua')
         .onDelete('CASCADE')
         .onUpdate('CASCADE');

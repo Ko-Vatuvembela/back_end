@@ -3,7 +3,7 @@ import Lingua from './Lingua';
 
 export default class Palavra extends BaseModel {
   @column({ isPrimary: true })
-  public idPalavra: string;
+  public idPalavra: number;
 
   @column()
   public palavra: string;

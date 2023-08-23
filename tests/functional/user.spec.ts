@@ -16,7 +16,7 @@ test.group('Testar a funcionalidades relacionadas ao utilizador', (group) => {
   });
 
   test('Procurar um utilizador pelo uid e não encontrar', async ({ client }) => {
-    const response = await client.get(`/api/user/${v4()}`);
+    const response = await client.get(`/api/user/1`);
     response.assertStatus(404);
   });
 

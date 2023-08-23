@@ -5,7 +5,7 @@ import Palavra from './Palavra';
 
 export default class Significado extends BaseModel {
   @column({ isPrimary: true })
-  public idSignificado: string;
+  public idSignificado: number;
 
   @column()
   public significado: string;
@@ -14,13 +14,13 @@ export default class Significado extends BaseModel {
   public exemplo: string;
 
   @column()
-  public classeGramaticalFK: string;
+  public classeGramaticalFK: number;
 
   @column()
-  public palavraFK: string;
+  public palavraFK: number;
 
   @column()
-  public utilizadorFK: string;
+  public utilizadorFK: number;
 
   @belongsTo(() => Utilizador, { foreignKey: 'utilizadorFK' })
   public uid: BelongsTo<typeof Utilizador>;

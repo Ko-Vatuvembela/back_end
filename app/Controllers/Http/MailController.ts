@@ -29,12 +29,13 @@ export default class MailController {
     const { request, response } = ctx;
     const { email, verificationCode } = await request.validate(ConfirmationCodeValidator);
 
-    const user = await userServices.checkIfEmailExists(String(email));
-    if (user) {
+    const uid = await userServices.getUserPKByEmail(String(email));
+    if (uid) {
       const code = await MailVerification.findBy('verification_code', verificationCode);
       if (code) {
         if (code.verificationCode === verificationCode) {
           await code.delete();
+          await userServices.updateUser(uid, { ativada: true });
           response.ok({ message: 'Código confirmado com sucesso' });
           return;
         }

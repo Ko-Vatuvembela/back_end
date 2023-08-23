@@ -17,7 +17,7 @@ export default class UpdateUserValidator extends BaseValidator {
       rules.trim(),
     ]),
     params: schema.object().members({
-      uid: schema.string([rules.uuid({ version: 4 }), rules.escape(), rules.trim()]),
+      uid: schema.number([rules.unsigned()]),
     }),
   });
 }

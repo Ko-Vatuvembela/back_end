@@ -9,7 +9,7 @@ export default class UUIDValidator extends BaseValidator {
 
   public schema = schema.create({
     params: schema.object().members({
-      uid: schema.string([rules.uuid({ version: 4 }), rules.escape(), rules.trim()]),
+      uid: schema.number([rules.unsigned()]),
     }),
   });
 }

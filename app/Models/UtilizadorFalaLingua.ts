@@ -4,10 +4,10 @@ import Utilizador from './Utilizador';
 
 export default class UtilizadorFalaLingua extends BaseModel {
   @column()
-  public utilizadorFK: string;
+  public utilizadorFK: number;
 
   @column()
-  public linguaFK: string;
+  public linguaFK: number;
 
   @belongsTo(() => Utilizador, { foreignKey: 'utilizadorFK' })
   public uid: BelongsTo<typeof Utilizador>;

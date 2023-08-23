@@ -3,7 +3,7 @@ import Utilizador from './Utilizador';
 
 export default class Relatorio extends BaseModel {
   @column({ isPrimary: true })
-  public utilizadorFK: string;
+  public utilizadorFK: number;
 
   @column()
   public quantidadePostGramatica: number;

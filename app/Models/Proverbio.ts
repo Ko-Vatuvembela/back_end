@@ -4,7 +4,7 @@ import Utilizador from './Utilizador';
 
 export default class Proverbio extends BaseModel {
   @column({ isPrimary: true })
-  public idProverbio: string;
+  public idProverbio: number;
 
   @column()
   public proverbio: string;
@@ -16,10 +16,10 @@ export default class Proverbio extends BaseModel {
   public data: Date;
 
   @column()
-  public linguaFK: string;
+  public linguaFK: number;
 
   @column()
-  public utilizadorFK: string;
+  public utilizadorFK: number;
 
   @belongsTo(() => Utilizador, { foreignKey: 'utilizadorFK' })
   public uid: BelongsTo<typeof Utilizador>;

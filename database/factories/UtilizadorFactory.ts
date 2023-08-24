@@ -1,10 +1,9 @@
 import Utilizador from 'App/Models/Utilizador';
 import Factory from '@ioc:Adonis/Lucid/Factory';
-import { v4 } from 'uuid';
 
 export default Factory.define(Utilizador, ({ faker }) => {
   return {
-    uid: v4(),
+    uid: Number(faker.number),
     email: faker.internet.email(),
     foto: faker.image.avatar(),
     nome: faker.person.firstName(),

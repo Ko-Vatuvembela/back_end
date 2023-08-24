@@ -7,7 +7,7 @@ export default class LanguageIDValidator extends BaseValidator {
   }
   public schema = schema.create({
     params: schema.object().members({
-      idLingua: schema.number([rules.unsigned()]),
+      id: schema.number([rules.unsigned()]),
     }),
   });
 }

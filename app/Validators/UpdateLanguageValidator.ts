@@ -8,7 +8,7 @@ export default class UpdateLanguageValidator extends BaseValidator {
   public schema = schema.create({
     lingua: schema.string([rules.trim(), rules.minLength(4), rules.maxLength(20)]),
     params: schema.object().members({
-      idLingua: schema.number([rules.unsigned()]),
+      id: schema.number([rules.unsigned()]),
     }),
   });
 }

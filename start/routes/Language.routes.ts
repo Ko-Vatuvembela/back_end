@@ -3,9 +3,9 @@ import Route from '@ioc:Adonis/Core/Route';
 export const languageRoutes = () =>
   Route.group(() => {
     Route.get('/', 'LanguageController.getLanguages');
-    Route.get('/:idLingua', 'LanguageController.getLanguageByID');
+    Route.get('/:id', 'LanguageController.getLanguageByID');
     Route.post('/', 'LanguageController.createLanguage');
-    Route.put('/:idLingua', 'LanguageController.updateLanguage');
-    Route.delete('/:idLingua', 'LanguageController.deleteLanguage');
+    Route.put('/:id', 'LanguageController.updateLanguage');
+    Route.delete('/:id', 'LanguageController.deleteLanguage');
   }).prefix('/lingua');
 // .middleware('auth');

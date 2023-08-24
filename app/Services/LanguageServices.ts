@@ -7,19 +7,19 @@ export class LanguageServices {
   public getLanguages = async () => {
     return await Lingua.all();
   };
-  public getLanguageByID = async (idLingua: number) => {
-    return await Lingua.findBy('id_lingua', idLingua);
+  public getLanguageByID = async (id: number) => {
+    return await Lingua.findBy('id_lingua', id);
   };
-  public updateLanguage = async (idLingua: number, lingua: string) => {
-    const linguaAntiga = await Lingua.findBy('id_lingua', idLingua);
+  public updateLanguage = async (id: number, lingua: string) => {
+    const linguaAntiga = await Lingua.findBy('id_lingua', id);
     if (linguaAntiga) {
-      await Lingua.updateOrCreate({ idLingua }, { lingua });
+      await Lingua.updateOrCreate({ id }, { lingua });
       return true;
     }
     return false;
   };
-  public deleteLanguage = async (idLingua: number) => {
-    const lingua = await Lingua.findBy('id_lingua', idLingua);
+  public deleteLanguage = async (id: number) => {
+    const lingua = await Lingua.findBy('id_lingua', id);
     if (lingua) {
       await lingua.delete();
       return true;

@@ -16,7 +16,7 @@ export default class LanguageController {
   };
   public getLanguageByID = async ({ request, response }: HttpContextContract) => {
     const { params } = await request.validate(LanguageIDValidator);
-    const language = await languageServices.getLanguageByID(params.idLingua);
+    const language = await languageServices.getLanguageByID(params.id);
     if (language) {
       response.ok(language);
       return;
@@ -25,7 +25,7 @@ export default class LanguageController {
   };
   public updateLanguage = async ({ response, request }: HttpContextContract) => {
     const { params, lingua } = await request.validate(UpdateLanguageValidator);
-    const idUpdated = await languageServices.updateLanguage(params.idLingua, lingua);
+    const idUpdated = await languageServices.updateLanguage(params.id, lingua);
     if (idUpdated) {
       response.ok(idUpdated);
       return;
@@ -35,7 +35,7 @@ export default class LanguageController {
   public deleteLanguage = async ({ response, request }: HttpContextContract) => {
     const { params } = await request.validate(LanguageIDValidator);
 
-    const idDeleted = await languageServices.deleteLanguage(params.idLingua);
+    const idDeleted = await languageServices.deleteLanguage(params.id);
     if (idDeleted) {
       response.ok({ message: 'Deleted sucesssfully' });
       return;

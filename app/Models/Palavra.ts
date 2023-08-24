@@ -12,5 +12,5 @@ export default class Palavra extends BaseModel {
   public linguaFK: string;
 
   @belongsTo(() => Lingua, { foreignKey: 'linguaFK' })
-  public idLingua: BelongsTo<typeof Lingua>;
+  public id: BelongsTo<typeof Lingua>;
 }

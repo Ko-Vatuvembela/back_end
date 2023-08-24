@@ -6,7 +6,7 @@ export default class extends BaseSchema {
   public async up() {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id_lingua').unsigned().primary();
-      table.string('lingua', 20);
+      table.string('lingua', 20).unique();
     });
   }
 

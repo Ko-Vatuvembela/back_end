@@ -27,6 +27,8 @@ export default class ExceptionHandler extends HttpExceptionHandler {
       return response.unauthorized();
     } else if (error.code === 'E_VALIDATION_FAILURE') {
       return response.unprocessableEntity(error.messages.errors);
+    } else if (error.code === 'ER_DUP_ENTRY') {
+      return response.conflict({ message: 'Este valor já existe' });
     } else {
       console.error(error);
     }

@@ -23,9 +23,11 @@ import { publicRoutes } from './routes/Public.routes';
 import { mailRoutes } from './routes/Mail.routes';
 import { profileRoutes } from './routes/Profile.routes';
 import { authRoutes } from './routes/Auth.routes ';
+import { languageRoutes } from './routes/Language.routes';
 Route.group(() => {
   mailRoutes();
   authRoutes();
   publicRoutes();
   profileRoutes();
+  languageRoutes();
 }).prefix('/api');

@@ -21,6 +21,7 @@
 import Route from '@ioc:Adonis/Core/Route';
 import { publicRoutes } from './routes/Public.routes';
 import { mailRoutes } from './routes/Mail.routes';
+import { postRoutes } from './routes/Post.routes';
 import { profileRoutes } from './routes/Profile.routes';
 import { authRoutes } from './routes/Auth.routes ';
 import { classeGramaticalRoutes } from './routes/ClasseGramatical.route';
@@ -30,6 +31,7 @@ Route.group(() => {
   classeGramaticalRoutes();
   authRoutes();
   publicRoutes();
+  postRoutes();
   profileRoutes();
   languageRoutes();
 }).prefix('/api');

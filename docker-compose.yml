@@ -14,23 +14,22 @@ services:
     networks:
         - kovatu_net
     depends_on:
-        - mysql
+        - postgres
         # - redis_queue
         # - redis_cache
-  mysql:
+  postgres:
     container_name: kovatu_db
-    image:  mysql:8.1.0
+    image:  postgres:14
     env_file:
       - .env
     ports:
-      - 3306:3306
+      - 5432:5432
     networks:
       - kovatu_net
     environment:
-      - MYSQL_USER=${DB_USER}
-      - MYSQL_ROOT_PASSWORD=${DB_PASS}
-      - MYSQL_PASSWORD=${DB_PASS}
-      - MYSQL_ALLOW_EMPTY_PASSWORD=no
+      - POSTGRES_USER=${PG_USER} 
+      - POSTGRES_DB=${PG_DB_NAME}
+      - POSTGRES_PASSWORD=${PG_PASSWORD}
 
   # redis_queue:
   #   container_name: kovatu_queue

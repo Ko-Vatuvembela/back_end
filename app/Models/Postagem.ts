@@ -3,6 +3,9 @@ import Utilizador from './Utilizador';
 import Lingua from './Lingua';
 
 export default class Postagem extends BaseModel {
+  public static get table() {
+    return 'postagens';
+  }
   @column({ isPrimary: true })
   public idPostagem: number;
 
@@ -19,5 +22,5 @@ export default class Postagem extends BaseModel {
   public uid: BelongsTo<typeof Utilizador>;
 
   @belongsTo(() => Lingua, { foreignKey: 'linguaFK' })
-  public id: BelongsTo<typeof Lingua>;
+  public idLingua: BelongsTo<typeof Lingua>;
 }

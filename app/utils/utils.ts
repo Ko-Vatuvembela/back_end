@@ -4,6 +4,7 @@ import { UserType } from 'App/types/types';
 import Mail from '@ioc:Adonis/Addons/Mail';
 import mail from 'Config/mail';
 import { SendMailType } from 'App/types/types';
+import Database from '@ioc:Adonis/Lucid/Database';
 
 export const debug = (value: any) => {
   console.log('============ BEGIN DEBUG ============');
@@ -27,6 +28,9 @@ export const mapUserType = (user: Utilizador) => {
     uid,
   };
   return mappedUser;
+};
+export const eraseTable = async (table: string) => {
+  await Database.rawQuery(`delete from ${table} where true`);
 };
 export const capitalize = (str: string) => {
   let ret = '';

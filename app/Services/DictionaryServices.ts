@@ -52,4 +52,12 @@ export class DictionaryServices {
     await Significado.updateOrCreateMany('idSignificado', significados);
     return true;
   };
+  public deleteWord = async (idPalavra: number): Promise<object | boolean> => {
+    const palavra = await Palavra.find(idPalavra);
+    if (palavra) {
+      palavra.delete();
+      return true;
+    }
+    return false;
+  };
 }

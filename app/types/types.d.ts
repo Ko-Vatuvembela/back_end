@@ -31,3 +31,11 @@ export type UpdateNMeaningType = {
   classeGramaticalFK: number;
   idSignificado: number;
 };
+export type QuoteMap = {
+  idProverbio?: number;
+  proverbio: string;
+  utilizadorFK: number;
+  explicacao: string;
+  linguaFK: number;
+  data?: string;
+};

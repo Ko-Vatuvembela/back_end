@@ -33,12 +33,20 @@ export class DictionaryServices {
       .where('id_palavra', idPalavra)
       .andWhere('lingua_fk', linguaFK);
     if (palavra.length) {
-      const significado = await Significado.query().where('palavra_fk', idPalavra);
+      const significado = await Significado.query()
+        .preload('uid', (data) => data.select('nome', 'sobrenome'))
+        .where('palavra_fk', idPalavra);
       if (significado.length) {
         return { palavra, significados: significado };
       }
     }
     return false;
+  };
+  public getWordsByLetter = async (linguaFK: number, initial: string) => {
+    const palavra = await Palavra.query()
+      .where('lingua_fk', linguaFK)
+      .whereLike('palavra', initial + '%');
+    return palavra;
   };
   public updateWord = async (
     linguaFK: number,

@@ -4,6 +4,7 @@ export const dictionaryRoutes = () =>
   Route.group(() => {
     Route.post('/', 'DictionaryController.create');
     Route.get('/:idLingua/:idPalavra', 'DictionaryController.findWord');
+    Route.get('/all/:idLingua/:initial', 'DictionaryController.getWordsByLetter');
     Route.put('/:idLingua/:idPalavra', 'DictionaryController.updateWord');
     Route.delete('/:idPalavra', 'DictionaryController.deleteWord');
   })

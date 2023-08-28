@@ -4,15 +4,15 @@ import { DictionaryServices } from 'App/Services/DictionaryServices';
 import DictionaryIDValidator from 'App/Validators/DictionaryIDValidator';
 import DictionaryParamsValidator from 'App/Validators/DictionaryParamsValidator';
 import DictionaryValidator from 'App/Validators/DictionaryValidator ';
+import LanguageIDParamValidator from 'App/Validators/LanguageIDParamValidator';
 import UpdateDictionaryValidator from 'App/Validators/UpdateDictionaryValidator';
 
 const dictionaryServices = new DictionaryServices();
 
 export default class DictionaryController {
   public create = async ({ request, response, auth }: HttpContextContract) => {
-    const { classeGramaticalFK, exemplo, linguaFK, palavra, significado } = await request.validate(
-      DictionaryValidator
-    );
+    const { classeGramaticalFK, exemplo, linguaFK, palavra, significado } =
+      await request.validate(DictionaryValidator);
     const data = await dictionaryServices.create(
       palavra,
       significado,
@@ -33,6 +33,12 @@ export default class DictionaryController {
       return;
     }
     return response.notFound();
+  };
+  public getWordsByLetter = async ({ request, response }: HttpContextContract) => {
+    const { params } = await request.validate(LanguageIDParamValidator);
+    const { idLingua, initial } = params;
+    const data = await dictionaryServices.getWordsByLetter(idLingua, initial[0].toUpperCase());
+    response.ok(data);
   };
   public updateWord = async ({ request, response }: HttpContextContract) => {
     const { params, significados, palavra } = await request.validate(UpdateDictionaryValidator);

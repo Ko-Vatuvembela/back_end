@@ -5,12 +5,16 @@ export class PostServices {
     return $attributes;
   };
   public getByID = async (idPostagem: number, linguaFK: number) => {
-    const data = await Postagem.query().preload('idLingua').where({ idPostagem, linguaFK });
+    const data = await Postagem.query()
+      .preload('idLingua')
+      .where({ idPostagem, linguaFK })
+      .preload('uid', (data) => data.select('nome', 'sobrenome'));
     return data;
   };
   public getAllPosts = async (linguaFK: number) => {
-    // const data = await Postagem.query().where({ linguaFK });
-    const data = await Postagem.findBy('lingua_fk', linguaFK);
+    const data = await Postagem.query()
+      .where('lingua_fk', linguaFK)
+      .preload('uid', (data) => data.select('nome', 'sobrenome'));
     return data;
   };
   public update = async (idPostagem: number, linguaFK: number, conteudo: string) => {

@@ -1,3 +1,5 @@
+import Significado from 'App/Models/Significado';
+
 export type UserType = {
   uid?: number;
   nome: string;
@@ -18,4 +20,14 @@ export type UpdateUserType = {
 export type SendMailType = {
   to: string;
   subject: string;
+};
+export type WordWithMeaningType = {
+  palavra: string;
+  significados: Array<Significado>;
+};
+export type UpdateNMeaningType = {
+  significado: string;
+  exemplo: string;
+  classeGramaticalFK: number;
+  idSignificado: number;
 };

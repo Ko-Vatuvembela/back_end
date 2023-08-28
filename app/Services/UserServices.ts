@@ -16,7 +16,11 @@ export class UserServices {
   };
   public getUserPKByEmail = async (email: string) => {
     const pk = await Database.from(TABLE_NAME).select('uid').where('email', email);
-    return pk[0].uid;
+    if (pk[0]) {
+      const { uid } = pk[0];
+      return Number(uid);
+    }
+    return undefined;
   };
   public getUserByPK = async (uid: number) => {
     const payload = await Utilizador.findBy('uid', uid);

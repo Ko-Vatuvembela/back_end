@@ -12,8 +12,12 @@ export default class AuthController {
     const password = payload.password as string;
 
     const uid = await userServices.getUserPKByEmail(email);
-    const token = await auth.attempt(uid, password);
-    response.ok(token);
+    if (uid) {
+      const token = await auth.attempt(String(uid), password);
+      response.ok(token);
+      return;
+    }
+    response.unauthorized();
   };
 
   public logout = async (ctx: HttpContextContract) => {

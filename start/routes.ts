@@ -24,12 +24,14 @@ import { mailRoutes } from './routes/Mail.routes';
 import { postRoutes } from './routes/Post.routes';
 import { profileRoutes } from './routes/Profile.routes';
 import { authRoutes } from './routes/Auth.routes ';
+import { dictionaryRoutes } from './routes/Dictionary.routes ';
 import { classeGramaticalRoutes } from './routes/ClasseGramatical.route';
 import { languageRoutes } from './routes/Language.routes';
 Route.group(() => {
   mailRoutes();
   classeGramaticalRoutes();
   authRoutes();
+  dictionaryRoutes();
   publicRoutes();
   postRoutes();
   profileRoutes();

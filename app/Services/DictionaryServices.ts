@@ -40,4 +40,16 @@ export class DictionaryServices {
     }
     return false;
   };
+  public updateWord = async (
+    linguaFK: number,
+    idPalavra: number,
+    palavra: string
+  ): Promise<object | boolean> => {
+    await Palavra.updateOrCreate({ idPalavra }, { palavra, linguaFK });
+    return true;
+  };
+  public updateMeaning = async (significados: Array<Significado>): Promise<object | boolean> => {
+    await Significado.updateOrCreateMany('idSignificado', significados);
+    return true;
+  };
 }

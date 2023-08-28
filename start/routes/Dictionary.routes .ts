@@ -4,6 +4,7 @@ export const dictionaryRoutes = () =>
   Route.group(() => {
     Route.post('/', 'DictionaryController.create');
     Route.get('/:idLingua/:idPalavra', 'DictionaryController.findWord');
+    Route.put('/:idLingua/:idPalavra', 'DictionaryController.updateWord');
   })
     .prefix('/dictionary')
     .middleware('auth');

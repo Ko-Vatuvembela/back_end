@@ -25,3 +25,9 @@ export type WordWithMeaningType = {
   palavra: string;
   significados: Array<Significado>;
 };
+export type UpdateNMeaningType = {
+  significado: string;
+  exemplo: string;
+  classeGramaticalFK: number;
+  idSignificado: number;
+};

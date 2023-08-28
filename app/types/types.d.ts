@@ -37,5 +37,5 @@ export type QuoteMap = {
   utilizadorFK: number;
   explicacao: string;
   linguaFK: number;
-  data: Date;
+  data?: string;
 };

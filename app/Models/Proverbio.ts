@@ -1,6 +1,7 @@
-import { BaseModel, BelongsTo, belongsTo, column } from '@ioc:Adonis/Lucid/Orm';
+import { BaseModel, BelongsTo, beforeSave, belongsTo, column } from '@ioc:Adonis/Lucid/Orm';
 import Lingua from './Lingua';
 import Utilizador from './Utilizador';
+import { getDate } from 'App/utils/utils';
 
 export default class Proverbio extends BaseModel {
   @column({ isPrimary: true })
@@ -13,7 +14,7 @@ export default class Proverbio extends BaseModel {
   public explicacao: string;
 
   @column()
-  public data: Date;
+  public data: string;
 
   @column()
   public linguaFK: number;
@@ -26,4 +27,9 @@ export default class Proverbio extends BaseModel {
 
   @belongsTo(() => Lingua, { foreignKey: 'linguaFK' })
   public id: BelongsTo<typeof Lingua>;
+
+  @beforeSave()
+  public static async setData(proverbio: Proverbio) {
+    proverbio.data = getDate();
+  }
 }

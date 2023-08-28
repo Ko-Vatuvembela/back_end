@@ -18,8 +18,17 @@ export class QuoteServices {
     });
     return $attributes;
   };
+  public allQuotes = async () => {
+    return await Proverbio.query().preload('uid', (data) => data.select('nome', 'sobrenome'));
+  };
   public findQuote = async (idProverbio: number) => {
-    return await Proverbio.find(idProverbio);
+    const proverbio = await Proverbio.query()
+      .where('id_proverbio', idProverbio)
+      .preload('uid', (data) => data.select('nome', 'sobrenome'));
+    if (proverbio[0]) {
+      return proverbio[0];
+    }
+    return false;
   };
   public deleteQuote = async (idProverbio: number) => {
     const quote = await this.findQuote(idProverbio);

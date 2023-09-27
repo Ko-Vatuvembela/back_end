@@ -37,9 +37,8 @@ export default class QuotesController {
     response.notFound();
   };
   public updateQuote = async ({ request, response, auth }: HttpContextContract) => {
-    const { params, explicacao, linguaFK, proverbio } = await request.validate(
-      UpdateQuotesValidator
-    );
+    const { params, explicacao, linguaFK, proverbio } =
+      await request.validate(UpdateQuotesValidator);
     const utilizadorFK = auth.user?.uid;
     const { idProverbio } = params;
     const updatedQuote: QuoteMap = {

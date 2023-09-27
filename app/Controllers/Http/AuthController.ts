@@ -1,6 +1,8 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext';
 import LoginValidator from 'App/Validators/LoginValidator';
 import { UserServices } from 'App/Services/UserServices';
+import { mapUserType } from 'App/utils/utils';
+import Utilizador from 'App/Models/Utilizador';
 
 const userServices = new UserServices();
 
@@ -14,7 +16,9 @@ export default class AuthController {
     const uid = await userServices.getUserPKByEmail(email);
     if (uid) {
       const token = await auth.attempt(String(uid), password);
-      response.ok(token);
+      const user = mapUserType(ctx.auth.user as Utilizador);
+
+      response.ok({ token, user });
       return;
     }
     response.unauthorized();

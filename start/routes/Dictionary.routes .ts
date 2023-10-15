@@ -9,4 +9,4 @@ export const dictionaryRoutes = () =>
     Route.delete('/:idPalavra', 'DictionaryController.deleteWord');
   })
     .prefix('/dictionary')
-    .middleware('auth');
+    .middleware(['auth', 'enabledaccount']);

@@ -5,7 +5,9 @@ import { UserServices } from 'App/Services/UserServices';
 import UUIDValidator from 'App/Validators/UUIDValidator';
 import { UserType } from 'App/types/types';
 import Utilizador from 'App/Models/Utilizador';
-import { mapUserType } from 'App/utils/utils';
+import { getRandomNumbers, mapUserType, sendMail } from 'App/utils/utils';
+import Database from '@ioc:Adonis/Lucid/Database';
+import MailVerification from 'App/Models/MailVerification';
 const userServices = new UserServices();
 
 export default class UsersController {
@@ -26,7 +28,14 @@ export default class UsersController {
       response.conflict({ message: `O email ${email} já existe` });
       return;
     }
-    response.created(await userServices.createUser(newUser));
+    const confirmationCode = getRandomNumbers();
+    Promise.all([
+      await Database.from(MailVerification.table).delete().where('email', email),
+      await sendMail({ to: email, subject: 'Código de confirmação' }, confirmationCode),
+      await MailVerification.create({ email, verificationCode: String(confirmationCode) }),
+      await userServices.createUser(newUser),
+    ]);
+    response.created();
   };
   public findUser = async (ctx: HttpContextContract) => {
     const { response, request } = ctx;

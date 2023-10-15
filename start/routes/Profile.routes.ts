@@ -9,4 +9,4 @@ export const profileRoutes = () =>
     Route.put('/:uid', 'UsersController.updateUser');
   })
     .prefix('/profile')
-    .middleware('auth');
+    .middleware(['auth', 'enabledaccount']);

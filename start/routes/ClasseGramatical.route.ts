@@ -7,5 +7,6 @@ export const classeGramaticalRoutes = () =>
     Route.get('/:id', 'ClasseGramaticalsController.getById');
     Route.put('/:id', 'ClasseGramaticalsController.update');
     Route.delete('/:id', 'ClasseGramaticalsController.delete');
-  }).prefix('/classe_gramatical');
-// .middleware('auth');
+  })
+    .prefix('/classe_gramatical')
+    .middleware(['auth', 'enabledaccount']);

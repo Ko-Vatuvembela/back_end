@@ -9,4 +9,4 @@ export const postRoutes = () =>
     Route.get('/:id', 'PostsController.getAllPosts');
   })
     .prefix('/post')
-    .middleware('auth');
+    .middleware(['auth', 'enabledaccount']);

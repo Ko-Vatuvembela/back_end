@@ -7,5 +7,6 @@ export const languageRoutes = () =>
     Route.post('/', 'LanguageController.createLanguage');
     Route.put('/:id', 'LanguageController.updateLanguage');
     Route.delete('/:id', 'LanguageController.deleteLanguage');
-  }).prefix('/lingua');
-// .middleware('auth');
+  })
+    .prefix('/lingua')
+    .middleware(['auth', 'enabledaccount']);

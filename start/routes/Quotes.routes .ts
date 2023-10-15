@@ -9,4 +9,4 @@ export const quotesRoutes = () =>
     Route.get('/', 'QuotesController.allQuotes');
   })
     .prefix('/quotes')
-    .middleware('auth');
+    .middleware(['auth', 'enabledaccount']);

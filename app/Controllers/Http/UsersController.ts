@@ -29,13 +29,15 @@ export default class UsersController {
       return;
     }
     const confirmationCode = getRandomNumbers();
-    Promise.all([
+    const datas = await Promise.all([
       await Database.from(MailVerification.table).delete().where('email', email),
       await sendMail({ to: email, subject: 'Código de confirmação' }, confirmationCode),
       await MailVerification.create({ email, verificationCode: String(confirmationCode) }),
       await userServices.createUser(newUser),
     ]);
-    response.created();
+
+    const { nome, sobrenome, foto, uid } = datas[3];
+    response.created({ nome, sobrenome, foto, uid, email, ativada: false });
   };
   public findUser = async (ctx: HttpContextContract) => {
     const { response, request } = ctx;

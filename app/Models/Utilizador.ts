@@ -34,6 +34,8 @@ export default class Utilizador extends BaseModel {
     utilizador.nome = capitalize(utilizador.nome).trim();
     utilizador.sobrenome = capitalize(utilizador.sobrenome).trim();
     utilizador.foto = 'default_foto.jng';
-    utilizador.password = await Hash.make(utilizador.password);
+    if (Hash.needsReHash(utilizador.password)) {
+      utilizador.password = await Hash.make(utilizador.password);
+    }
   }
 }

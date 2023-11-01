@@ -36,9 +36,12 @@ export class UserServices {
   };
 
   public updateUser = async (uid: number, utilizador: UpdateUserType) => {
-    return Utilizador.updateOrCreate({ uid }, utilizador);
-  };
+    const user = await Utilizador.find(uid);
 
+    if (user) {
+      user.merge(utilizador).save();
+    }
+  };
   public deleteUser = async (uid: number) => {
     Database.from(Utilizador.table).delete().where({ username: uid });
   };

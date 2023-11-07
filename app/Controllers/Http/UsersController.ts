@@ -94,7 +94,11 @@ export default class UsersController {
         userServices.updateUser(uid, { password }),
         sendMail({ to: email as string, subject: 'Nova senha' }, password),
       ]);
-      return response.ok({ message: `Foi enviado a nova senha para o email ${email as string}.` });
+      return response.ok({
+        message: `Foi enviado a nova senha para o email ${
+          email as string
+        }. Realize o login  com a nova senha.`,
+      });
     }
     response.notFound();
   };

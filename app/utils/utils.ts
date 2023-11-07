@@ -14,7 +14,14 @@ export const getDate = () => {
 
   return `${day}/${month}/${year}`;
 };
-
+export function setRandomPassword(email: string) {
+  let ret = '';
+  for (let i = 1; i < email.indexOf('@'); i++) {
+    ret += (i & 1) === 0 ? Math.floor(Math.random() * i * 100) : email[i];
+  }
+  ret += email[0];
+  return ret;
+}
 export const debug = (value: any) => {
   console.log('============ BEGIN DEBUG ============');
   console.log(value);

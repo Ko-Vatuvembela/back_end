@@ -57,7 +57,7 @@ export const capitalize = (str: string) => {
   return ret;
 };
 
-export const sendMail = async ({ to, subject }: SendMailType, code: Number) => {
+export const sendMail = async ({ to, subject }: SendMailType, code: Number | string) => {
   await Mail.send((message) => {
     const sender = mail.mailers.smtp.auth.user;
     message.from(sender).to(to).subject(subject).htmlView('emails/reset', {

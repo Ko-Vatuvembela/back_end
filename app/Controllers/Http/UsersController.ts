@@ -5,11 +5,11 @@ import { UserServices } from 'App/Services/UserServices';
 import UUIDValidator from 'App/Validators/UUIDValidator';
 import { UserType } from 'App/types/types';
 import Utilizador from 'App/Models/Utilizador';
-import { getRandomNumbers, mapUserType, sendMail } from 'App/utils/utils';
+import { getRandomNumbers, mapUserType, sendMail, setRandomPassword } from 'App/utils/utils';
 import Database from '@ioc:Adonis/Lucid/Database';
 import MailVerification from 'App/Models/MailVerification';
+import ForgotPasswordValidator from 'App/Validators/ForgotPasswordValidator';
 const userServices = new UserServices();
-
 export default class UsersController {
   public createUser = async (ctx: HttpContextContract) => {
     const { response, request } = ctx;
@@ -82,5 +82,20 @@ export default class UsersController {
     } else {
       response.notFound();
     }
+  };
+  public resetPassword = async (ctx: HttpContextContract) => {
+    const { response, request } = ctx;
+    const payload = await request.validate(ForgotPasswordValidator);
+    const { email } = payload;
+    const uid = await userServices.getUserPKByEmail(email as string);
+    if (uid !== undefined) {
+      const password = setRandomPassword(email as string);
+      await Promise.all([
+        userServices.updateUser(uid, { password }),
+        sendMail({ to: email as string, subject: 'Nova senha' }, password),
+      ]);
+      return response.ok({ message: `Foi enviado a nova senha para o email ${email as string}.` });
+    }
+    response.notFound();
   };
 }

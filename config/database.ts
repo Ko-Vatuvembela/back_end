@@ -19,7 +19,8 @@ const databaseConfig: DatabaseConfig = {
   | file.
   |
   */
-  connection: Env.get('DB_CONNECTION'),
+  connection: '',
+  // connection: Env.get('DB_CONNECTION') || '',
 
   connections: {
     /*

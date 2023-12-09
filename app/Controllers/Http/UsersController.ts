@@ -49,6 +49,10 @@ export default class UsersController {
       response.notFound();
     }
   };
+  public test = (ctx: HttpContextContract) => {
+    const { response } = ctx;
+    response.ok({ message: 'Tudo Okay' });
+  };
   public getProfile = async ({ response, auth }: HttpContextContract) => {
     const user = mapUserType(auth.user as Utilizador);
     response.ok(user);

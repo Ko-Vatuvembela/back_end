@@ -5,7 +5,7 @@ export class LanguageServices {
     return $attributes;
   };
   public getLanguages = async () => {
-    return await Lingua.all();
+    return await Lingua.query().orderBy('lingua', 'asc');
   };
   public getLanguageByID = async (id: number) => {
     return await Lingua.findBy('id_lingua', id);

@@ -14,6 +14,10 @@ export default class extends BaseSeeder {
       await languagesServices.createLanguage('Umbundu'),
       await languagesServices.createLanguage('Ngangela'),
       await languagesServices.createLanguage('Ocikwanyama'),
+      await languagesServices.createLanguage('Kikongo'),
+      await languagesServices.createLanguage('Lingala'),
+      await languagesServices.createLanguage('Fiote'),
+      await languagesServices.createLanguage('Ibinda'),
     ]);
   }
 }

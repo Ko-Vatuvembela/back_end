@@ -14,6 +14,9 @@ export class PostServices {
   public getPostByCategory = async (categoria: string) => {
     return await Postagem.query().where({ categoria });
   };
+  public getCategories = () => {
+    return ['Fonologia', 'Morfologia', 'Sintaxe'];
+  };
   public getAllPosts = async (linguaFK: number) => {
     const data = await Postagem.query()
       .where('lingua_fk', linguaFK)

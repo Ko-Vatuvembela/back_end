@@ -26,6 +26,9 @@ export default class PostsController {
     const { params } = await request.validate(CategoryValidator);
     response.ok(await postServices.getPostByCategory(params.category));
   };
+  public getCategories = async ({ response }: HttpContextContract) => {
+    response.ok(await postServices.getCategories());
+  };
   public delete = async ({ request, response }: HttpContextContract) => {
     const { params } = await request.validate(PostIDValidator);
     if (await postServices.delete(params.idPost, params.idLingua)) {

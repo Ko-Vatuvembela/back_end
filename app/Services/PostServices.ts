@@ -11,6 +11,9 @@ export class PostServices {
       .preload('uid', (data) => data.select('nome', 'sobrenome'));
     return data;
   };
+  public getPostByCategory = async (categoria: string) => {
+    return await Postagem.query().where({ categoria });
+  };
   public getAllPosts = async (linguaFK: number) => {
     const data = await Postagem.query()
       .where('lingua_fk', linguaFK)

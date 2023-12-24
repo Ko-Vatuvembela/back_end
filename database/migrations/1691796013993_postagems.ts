@@ -6,6 +6,7 @@ export default class extends BaseSchema {
   public async up() {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id_postagem').unsigned().primary(),
+        table.enum('categoria', ['Fonologia', 'Morfologia', 'Sintaxe']),
         table
           .integer('utilizador_fk')
           .unsigned()

@@ -24,7 +24,7 @@ export default class PostsController {
   };
   public getPostsByCategory = async ({ request, response }: HttpContextContract) => {
     const { params } = await request.validate(CategoryValidator);
-    response.ok(await postServices.getPostByCategory(params.category));
+    response.ok(await postServices.getPostByCategory(params.categoria));
   };
   public getCategories = async ({ response }: HttpContextContract) => {
     response.ok(await postServices.getCategories());

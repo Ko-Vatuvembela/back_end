@@ -7,7 +7,7 @@ export default class LanguageIDValidator extends BaseValidator {
   }
   public schema = schema.create({
     params: schema.object().members({
-      category: schema.enum(['Fonologia', 'Morfologia', 'Sintaxe']),
+      categoria: schema.enum(['Fonologia', 'Morfologia', 'Sintaxe']),
     }),
   });
 }

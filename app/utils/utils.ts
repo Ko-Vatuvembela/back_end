@@ -74,3 +74,4 @@ export const getRandomNumbers = (): Number => {
   }
   return Number(num);
 };
+export const categorias = ['Fonologia', 'Morfologia', 'Sintaxe', 'Diversos'];

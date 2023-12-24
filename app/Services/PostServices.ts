@@ -1,4 +1,6 @@
 import Postagem from 'App/Models/Postagem';
+import { categorias } from 'App/utils/utils';
+
 export class PostServices {
   public create = async (utilizadorFK: number, linguaFK: number, conteudo: string) => {
     const { $attributes } = await Postagem.create({ utilizadorFK, linguaFK, conteudo });
@@ -15,7 +17,7 @@ export class PostServices {
     return await Postagem.query().where({ categoria });
   };
   public getCategories = () => {
-    return ['Fonologia', 'Morfologia', 'Sintaxe'];
+    return categorias;
   };
   public getAllPosts = async (linguaFK: number) => {
     const data = await Postagem.query()

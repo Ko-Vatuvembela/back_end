@@ -1,12 +1,12 @@
 import BaseSchema from '@ioc:Adonis/Lucid/Schema';
-
+import { categorias } from 'App/utils/utils';
 export default class extends BaseSchema {
   protected tableName = 'postagens';
 
   public async up() {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id_postagem').unsigned().primary(),
-        table.enum('categoria', ['Fonologia', 'Morfologia', 'Sintaxe']),
+        table.enum('categoria', categorias),
         table
           .integer('utilizador_fk')
           .unsigned()

@@ -9,5 +9,6 @@ export const postRoutes = () =>
     Route.put('/:idLingua/:idPost', 'PostsController.update');
     Route.delete('/:idLingua/:idPost', 'PostsController.delete');
     Route.get('/:id', 'PostsController.getAllPosts');
-  }).prefix('/post');
-// .middleware(['auth', 'enabledaccount']);
+  })
+    .prefix('/post')
+    .middleware(['auth', 'enabledaccount']);

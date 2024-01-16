@@ -1,12 +1,15 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext';
 import { PostServices } from 'App/Services/PostServices';
+import { LanguageServices } from 'App/Services/LanguageServices';
 import LanguageIDValidator from 'App/Validators/LanguageIDValidator';
 import PostIDValidator from 'App/Validators/PostIDValidator';
 import PostValidator from 'App/Validators/PostValidator';
 import UpdatePostValidator from 'App/Validators/UpdatePostValidator';
 import CategoryValidator from 'App/Validators/CategoryValidator';
+import { ALL_LANGUAGES } from 'App/utils/utils';
 
 const postServices = new PostServices();
+const languageServices = new LanguageServices();
 
 export default class PostsController {
   public getByID = async ({ request, response }: HttpContextContract) => {
@@ -24,7 +27,15 @@ export default class PostsController {
   };
   public getPostsByCategory = async ({ request, response }: HttpContextContract) => {
     const { params } = await request.validate(CategoryValidator);
-    response.ok(await postServices.getPostByCategory(params.categoria));
+    const { categoria, lingua } = params;
+
+    if (lingua !== ALL_LANGUAGES) {
+      if (!(await languageServices.getLanguageByID(lingua as number))) {
+        response.unprocessableEntity();
+        return;
+      }
+    }
+    response.ok(await postServices.getPostByCategory(categoria, lingua));
   };
   public getCategories = async ({ response }: HttpContextContract) => {
     response.ok(await postServices.getCategories());

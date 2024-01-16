@@ -3,7 +3,7 @@ import Route from '@ioc:Adonis/Core/Route';
 export const postRoutes = () =>
   Route.group(() => {
     Route.get('/categorias', 'PostsController.getCategories');
-    Route.get('/categorias/:categoria', 'PostsController.getPostsByCategory');
+    Route.get('/categorias/:categoria/:lingua', 'PostsController.getPostsByCategory');
     Route.post('/', 'PostsController.create');
     Route.get('/:idLingua/:idPost', 'PostsController.getByID');
     Route.put('/:idLingua/:idPost', 'PostsController.update');

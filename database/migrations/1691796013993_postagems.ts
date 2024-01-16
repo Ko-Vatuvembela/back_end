@@ -20,6 +20,7 @@ export default class extends BaseSchema {
           .onDelete('CASCADE')
           .onUpdate('CASCADE');
       table.text('conteudo');
+      table.string('titulo');
     });
   }
 

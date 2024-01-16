@@ -49,10 +49,10 @@ export default class PostsController {
     response.notFound();
   };
   public update = async ({ request, response }: HttpContextContract) => {
-    const { params, conteudo } = await request.validate(UpdatePostValidator);
+    const { params, conteudo, categoria, titulo } = await request.validate(UpdatePostValidator);
     const post = await postServices.getByID(params.idPost, params.idLingua);
     if (post.length) {
-      if (await postServices.update(params.idPost, params.idLingua, conteudo)) {
+      if (await postServices.update(params.idPost, params.idLingua, titulo, categoria, conteudo)) {
         response.ok({});
         return;
       }
@@ -60,9 +60,9 @@ export default class PostsController {
     response.notFound();
   };
   public create = async ({ request, response, auth }: HttpContextContract) => {
-    const { conteudo, linguaFK } = await request.validate(PostValidator);
+    const { conteudo, linguaFK, titulo, categoria } = await request.validate(PostValidator);
     const uid = auth.user?.uid;
-    const data = await postServices.create(uid, linguaFK, conteudo);
+    const data = await postServices.create(uid, linguaFK, titulo, categoria, conteudo);
     response.created(data);
   };
 }

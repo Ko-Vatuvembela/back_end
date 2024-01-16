@@ -13,6 +13,9 @@ export default class Postagem extends BaseModel {
   public conteudo: string;
 
   @column()
+  public titulo: string;
+
+  @column()
   public categoria: string;
 
   @column()

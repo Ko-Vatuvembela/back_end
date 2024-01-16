@@ -5,10 +5,17 @@ export class PostServices {
   public create = async (
     utilizadorFK: number,
     linguaFK: number,
+    titulo: string,
     categoria: string,
     conteudo: string
   ) => {
-    const { $attributes } = await Postagem.create({ utilizadorFK, categoria, linguaFK, conteudo });
+    const { $attributes } = await Postagem.create({
+      utilizadorFK,
+      categoria,
+      linguaFK,
+      conteudo,
+      titulo,
+    });
     return $attributes;
   };
   public getByID = async (idPostagem: number, linguaFK: number) => {
@@ -35,12 +42,13 @@ export class PostServices {
   public update = async (
     idPostagem: number,
     linguaFK: number,
+    titulo: string,
     categoria: string,
     conteudo: string
   ) => {
     const data = await Postagem.query().preload('idLingua').where({ idPostagem, linguaFK });
     if (data.length) {
-      await Postagem.updateOrCreate({ idPostagem, linguaFK }, { conteudo, categoria });
+      await Postagem.updateOrCreate({ idPostagem, linguaFK }, { conteudo, categoria, titulo });
       return true;
     }
     return false;

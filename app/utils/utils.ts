@@ -75,4 +75,5 @@ export const getRandomNumbers = (): Number => {
   return Number(num);
 };
 export const categorias = ['Fonologia', 'Morfologia', 'Sintaxe', 'Diversos'];
+export const niveis = ['Bacharelado/Licenciatura', 'Mestrado', 'Doutorado'];
 export const ALL_LANGUAGES = 200;

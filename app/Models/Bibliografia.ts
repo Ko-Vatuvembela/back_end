@@ -1,8 +1,14 @@
 import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm';
 
 export default class Bibliografia extends BaseModel {
+  public static get table() {
+    return 'bibliografias';
+  }
   @column({ isPrimary: true })
   public idBibliografia: number;
+
+  @column()
+  public titulo: number;
 
   @column()
   public nomeAutor: string;
@@ -11,8 +17,8 @@ export default class Bibliografia extends BaseModel {
   public sobrenomeAutor: string;
 
   @column()
-  public titulo: string;
+  public editora: string;
 
   @column()
-  public ano: number;
+  public edicao: number;
 }

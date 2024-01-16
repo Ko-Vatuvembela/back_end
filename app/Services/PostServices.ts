@@ -36,7 +36,8 @@ export class PostServices {
   public getAllPosts = async (linguaFK: number) => {
     const data = await Postagem.query()
       .where('lingua_fk', linguaFK)
-      .preload('uid', (data) => data.select('nome', 'sobrenome'));
+      .preload('uid', (data) => data.select('nome', 'sobrenome'))
+      .groupBy('categoria');
     return data;
   };
   public update = async (

@@ -6,7 +6,7 @@ import PostIDValidator from 'App/Validators/PostIDValidator';
 import PostValidator from 'App/Validators/PostValidator';
 import UpdatePostValidator from 'App/Validators/UpdatePostValidator';
 import CategoryValidator from 'App/Validators/CategoryValidator';
-import { ALL_LANGUAGES } from 'App/utils/utils';
+import { ALL_LANGUAGES, categorias, niveis } from 'App/utils/utils';
 
 const postServices = new PostServices();
 const languageServices = new LanguageServices();
@@ -38,7 +38,10 @@ export default class PostsController {
     response.ok(await postServices.getPostByCategory(categoria, lingua));
   };
   public getCategories = async ({ response }: HttpContextContract) => {
-    response.ok(await postServices.getCategories());
+    response.ok(categorias);
+  };
+  public getLevels = async ({ response }: HttpContextContract) => {
+    response.ok(niveis);
   };
   public delete = async ({ request, response }: HttpContextContract) => {
     const { params } = await request.validate(PostIDValidator);

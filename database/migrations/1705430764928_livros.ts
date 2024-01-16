@@ -8,6 +8,7 @@ export default class extends BaseSchema {
       table.increments('id_livro');
       table.integer('id_bibliografia').references('bibliografias.id_bibliografia');
       table.string('editora');
+      table.string('local_publicacao');
       table.integer('edicao');
     });
   }

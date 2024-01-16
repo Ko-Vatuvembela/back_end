@@ -16,13 +16,10 @@ export default class Livro extends BaseModel {
   public editora: string;
 
   @column()
-  public sobrenomeAutor: string;
+  public localPublicacao: string;
 
   @column()
-  public titulo: string;
-
-  @column()
-  public ano: number;
+  public edicao: number;
 
   @belongsTo(() => Bibliografia, { foreignKey: 'bibliografiaFK' })
   public idBibliografia: BelongsTo<typeof Bibliografia>;

@@ -7,7 +7,7 @@ import PostValidator from 'App/Validators/PostValidator';
 import UpdatePostValidator from 'App/Validators/UpdatePostValidator';
 import CategoryValidator from 'App/Validators/CategoryValidator';
 import { ALL_LANGUAGES, categorias, niveis } from 'App/utils/utils';
-import { IArtigo, IBibliografia, ILivro, ITese } from 'App/types/types';
+import { IBibliografia } from 'App/types/types';
 import { BibliografiaService } from 'App/Services/BibliografiaService';
 import Bibliografia from 'App/Models/Bibliografia';
 
@@ -71,20 +71,8 @@ export default class PostsController {
       await request.validate(PostValidator);
 
     const uid = auth.user?.uid;
-    const {
-      ano,
-      edicao,
-      editora,
-      grau,
-      nomeAutor,
-      nomeInstituicao,
-      numeroPaginas,
-      localPublicacao,
-      sobrenomeAutor,
-      titulo,
-    } = bibliografia;
-
-    const bibliografiaPayload: IBibliografia = {
+    const { ano, nomeAutor, sobrenomeAutor, titulo } = bibliografia;
+    const bibliografiaPadrao: IBibliografia = {
       ano,
       nomeAutor,
       sobrenomeAutor,
@@ -97,19 +85,11 @@ export default class PostsController {
       titulo,
     });
     const { idBibliografia } = $attributes;
-
     const bibliografiaFK = idBibliografia as number;
-    const tipo: IArtigo | ILivro | ITese = {
-      numeroPaginas,
-      edicao,
-      editora,
-      localPublicacao,
-      grau,
-      nomeInstituicao,
-      bibliografiaFK,
-    };
-
-    response.created(await bibliografiaService.create(bibliografiaPayload, tipo));
-    // const data = await postServices.create(uid, linguaFK, titulo, categoria, conteudo);
+    await Promise.all([
+      bibliografiaService.create(bibliografiaPadrao, bibliografia),
+      postServices.create(uid, bibliografiaFK, linguaFK, tituloPostagem, categoria, conteudo),
+    ]);
+    response.created();
   };
 }

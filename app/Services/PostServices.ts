@@ -39,7 +39,9 @@ export class PostServices {
     const data = await Postagem.query()
       .where('lingua_fk', linguaFK)
       .preload('uid', (data) => data.select('nome', 'sobrenome'))
-      .groupBy('categoria');
+      .preload('idLingua', (data) => data.select('lingua'))
+      .preload('idBibliografia', (data) => data.select('*'))
+      .groupBy('id_postagem');
     return data;
   };
   public update = async (

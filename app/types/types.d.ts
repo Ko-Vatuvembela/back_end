@@ -39,3 +39,39 @@ export type QuoteMap = {
   linguaFK: number;
   data?: string;
 };
+
+export interface IBibliografia {
+  idBibliografia?: number;
+  titulo: string;
+  nomeAutor: string;
+  sobrenomeAutor: string;
+  ano: number;
+}
+export interface ILivro {
+  bibliografiaFK?: IBibliografia | number;
+  editora: string;
+  localPublicacao: string;
+  edicao: number;
+}
+export interface IArtigo {
+  bibliografiaFK?: IBibliografia | number;
+  numeroPaginas: number;
+}
+export interface ITese {
+  bibliografiaFK?: IBibliografia | number;
+  grau: string;
+  nomeInstituicao: string;
+}
+export interface ILingua {
+  id: number;
+  lingua: string;
+}
+export interface IPostagem {
+  idPostagem: number;
+  titulo: string;
+  conteudo: string;
+  categoria: string;
+  utilizadorFK: UserType | number;
+  linguaFK: ILingua | number;
+  bibliografiaFK: IBibliografia | number;
+}

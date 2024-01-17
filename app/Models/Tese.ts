@@ -7,9 +7,6 @@ export default class Tese extends BaseModel {
   }
 
   @column({ isPrimary: true })
-  public idTese: number;
-
-  @column({ isPrimary: true })
   public bibliografiaFK: number;
 
   @column()

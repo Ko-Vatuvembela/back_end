@@ -6,7 +6,6 @@ export default class extends BaseSchema {
 
   public async up() {
     this.schema.createTable(this.tableName, (table) => {
-      table.increments('id_tese');
       table.integer('id_bibliografia').references('bibliografias.id_bibliografia');
       table.enum('grau', niveis);
       table.string('nome_instituicao');

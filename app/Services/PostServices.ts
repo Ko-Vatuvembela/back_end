@@ -4,6 +4,7 @@ import { ALL_LANGUAGES, categorias } from 'App/utils/utils';
 export class PostServices {
   public create = async (
     utilizadorFK: number,
+    bibliografiaFK: number,
     linguaFK: number,
     titulo: string,
     categoria: string,
@@ -12,6 +13,7 @@ export class PostServices {
     const { $attributes } = await Postagem.create({
       utilizadorFK,
       categoria,
+      bibliografiaFK,
       linguaFK,
       conteudo,
       titulo,

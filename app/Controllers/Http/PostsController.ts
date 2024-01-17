@@ -7,9 +7,13 @@ import PostValidator from 'App/Validators/PostValidator';
 import UpdatePostValidator from 'App/Validators/UpdatePostValidator';
 import CategoryValidator from 'App/Validators/CategoryValidator';
 import { ALL_LANGUAGES, categorias, niveis } from 'App/utils/utils';
+import { IArtigo, IBibliografia, ILivro, ITese } from 'App/types/types';
+import { BibliografiaService } from 'App/Services/BibliografiaService';
+import Bibliografia from 'App/Models/Bibliografia';
 
 const postServices = new PostServices();
 const languageServices = new LanguageServices();
+const bibliografiaService = new BibliografiaService();
 
 export default class PostsController {
   public getByID = async ({ request, response }: HttpContextContract) => {
@@ -63,9 +67,49 @@ export default class PostsController {
     response.notFound();
   };
   public create = async ({ request, response, auth }: HttpContextContract) => {
-    const { conteudo, linguaFK, titulo, categoria } = await request.validate(PostValidator);
+    const { conteudo, linguaFK, tituloPostagem, categoria, bibliografia } =
+      await request.validate(PostValidator);
+
     const uid = auth.user?.uid;
-    const data = await postServices.create(uid, linguaFK, titulo, categoria, conteudo);
-    response.created(data);
+    const {
+      ano,
+      edicao,
+      editora,
+      grau,
+      nomeAutor,
+      nomeInstituicao,
+      numeroPaginas,
+      localPublicacao,
+      sobrenomeAutor,
+      titulo,
+    } = bibliografia;
+
+    const bibliografiaPayload: IBibliografia = {
+      ano,
+      nomeAutor,
+      sobrenomeAutor,
+      titulo,
+    };
+    const { $attributes } = await Bibliografia.create({
+      ano,
+      nomeAutor,
+      sobrenomeAutor,
+      titulo,
+    });
+    const { idBibliografia } = $attributes;
+    const bibliografiaFK = idBibliografia;
+    const tipo: IArtigo | ILivro | ITese = {
+      numeroPaginas,
+      edicao,
+      editora,
+      localPublicacao,
+      grau,
+      nomeInstituicao,
+      bibliografiaFK,
+    };
+
+    response.created(await bibliografiaService.create(bibliografiaPayload, tipo));
+    // const data = await postServices.create(uid, linguaFK, titulo, categoria, conteudo);
+    // response.created(data);
   };
 }

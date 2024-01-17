@@ -7,9 +7,6 @@ export default class Livro extends BaseModel {
   }
 
   @column({ isPrimary: true })
-  public idLivro: number;
-
-  @column({ isPrimary: true })
   public bibliografiaFK: number;
 
   @column()

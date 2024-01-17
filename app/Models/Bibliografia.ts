@@ -8,7 +8,7 @@ export default class Bibliografia extends BaseModel {
   public idBibliografia: number;
 
   @column()
-  public titulo: number;
+  public titulo: string;
 
   @column()
   public nomeAutor: string;

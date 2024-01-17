@@ -7,12 +7,13 @@ export default class extends BaseSchema {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id_postagem').unsigned().primary(),
         table.enum('categoria', categorias),
-        table
-          .integer('utilizador_fk')
-          .unsigned()
-          .references('utilizadores.uid')
-          .onDelete('CASCADE')
-          .onUpdate('CASCADE'),
+        table.integer('bibliografia_fk').references('bibliografias.id_bibliografia');
+      table
+        .integer('utilizador_fk')
+        .unsigned()
+        .references('utilizadores.uid')
+        .onDelete('CASCADE')
+        .onUpdate('CASCADE'),
         table
           .integer('lingua_fk')
           .unsigned()

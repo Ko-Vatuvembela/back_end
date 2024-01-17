@@ -12,10 +12,10 @@ export default class PostValidator extends BaseValidator {
     bibliografia: schema.object().members({
       titulo: schema.string(),
       nomeAutor: schema.string(),
-      localPublicacao: schema.string(),
+      localPublicacao: schema.string.optional(),
       sobrenomeAutor: schema.string(),
-      editora: schema.string(),
-      edicao: schema.number([rules.range(1, 500)]),
+      editora: schema.string.optional(),
+      edicao: schema.number.optional([rules.range(1, 500)]),
       ano: schema.number([rules.range(1500, 2024 ** 2)]),
       grau: schema.string.optional(),
       nomeInstituicao: schema.string.optional(),

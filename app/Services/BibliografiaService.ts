@@ -18,10 +18,10 @@ export class BibliografiaService {
     const { idBibliografia } = $attributes;
     const bibliografiaFK = idBibliografia;
 
-    if ('numeroPaginas' in data) {
+    if ('numeroPaginas' in data && data['numeroPaginas']) {
       const { numeroPaginas } = data;
       return await Artigo.create({ bibliografiaFK, numeroPaginas });
-    } else if ('localPublicacao' in data) {
+    } else if ('localPublicacao' in data && data['localPublicacao']) {
       const { edicao, editora, localPublicacao } = data;
       return await Livro.create({
         bibliografiaFK,

@@ -97,7 +97,8 @@ export default class PostsController {
       titulo,
     });
     const { idBibliografia } = $attributes;
-    const bibliografiaFK = idBibliografia;
+
+    const bibliografiaFK = idBibliografia as number;
     const tipo: IArtigo | ILivro | ITese = {
       numeroPaginas,
       edicao,
@@ -110,6 +111,5 @@ export default class PostsController {
 
     response.created(await bibliografiaService.create(bibliografiaPayload, tipo));
     // const data = await postServices.create(uid, linguaFK, titulo, categoria, conteudo);
-    // response.created(data);
   };
 }

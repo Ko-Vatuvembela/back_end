@@ -1,3 +1,4 @@
+import Database from '@ioc:Adonis/Lucid/Database';
 import Postagem from 'App/Models/Postagem';
 import { ALL_LANGUAGES, categorias } from 'App/utils/utils';
 
@@ -65,5 +66,9 @@ export class PostServices {
       return true;
     }
     return false;
+  };
+
+  public getOwner = async (idPostagem: number) => {
+    return await Database.from(Postagem.table).select('utilizador_fk').where({ idPostagem });
   };
 }

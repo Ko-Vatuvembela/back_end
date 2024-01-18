@@ -1,4 +1,5 @@
-import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm';
+import { BaseModel, beforeSave, column } from '@ioc:Adonis/Lucid/Orm';
+import { capitalize } from 'App/utils/utils';
 
 export default class Bibliografia extends BaseModel {
   public static get table() {
@@ -18,4 +19,11 @@ export default class Bibliografia extends BaseModel {
 
   @column()
   public ano: number;
+
+  @beforeSave()
+  public static async sanitize(bibliografia: Bibliografia) {
+    bibliografia.nomeAutor = capitalize(bibliografia.nomeAutor);
+    bibliografia.sobrenomeAutor = bibliografia.sobrenomeAutor.toUpperCase();
+    bibliografia.titulo = capitalize(bibliografia.titulo);
+  }
 }

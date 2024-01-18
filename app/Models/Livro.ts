@@ -1,5 +1,6 @@
-import { BaseModel, BelongsTo, belongsTo, column } from '@ioc:Adonis/Lucid/Orm';
+import { BaseModel, BelongsTo, beforeSave, belongsTo, column } from '@ioc:Adonis/Lucid/Orm';
 import Bibliografia from './Bibliografia';
+import { capitalize } from 'App/utils/utils';
 
 export default class Livro extends BaseModel {
   public static get table() {
@@ -20,4 +21,9 @@ export default class Livro extends BaseModel {
 
   @belongsTo(() => Bibliografia, { foreignKey: 'bibliografiaFK' })
   public idBibliografia: BelongsTo<typeof Bibliografia>;
+
+  @beforeSave()
+  public static async sanitize(livro: Livro) {
+    livro.localPublicacao = capitalize(livro.localPublicacao);
+  }
 }

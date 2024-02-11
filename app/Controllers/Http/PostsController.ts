@@ -7,7 +7,6 @@ import PostValidator from 'App/Validators/PostValidator';
 import UpdatePostValidator from 'App/Validators/UpdatePostValidator';
 import CategoryValidator from 'App/Validators/CategoryValidator';
 import { categorias, niveis } from 'App/utils/utils';
-import { IBibliografia } from 'App/types/types';
 import { BibliografiaService } from 'App/Services/BibliografiaService';
 import Bibliografia from 'App/Models/Bibliografia';
 
@@ -19,7 +18,7 @@ export default class PostsController {
   public getByID = async ({ request, response }: HttpContextContract) => {
     const { params } = await request.validate(PostIDValidator);
     const post = await postServices.getByID(params.idPost);
-    if (post.length) {
+    if (post) {
       response.ok(post);
       return;
     }
@@ -56,7 +55,7 @@ export default class PostsController {
   public update = async ({ request, response }: HttpContextContract) => {
     const { params, conteudo, categoria, titulo } = await request.validate(UpdatePostValidator);
     const post = await postServices.getByID(params.idPost);
-    if (post.length) {
+    if (post) {
       if (await postServices.update(params.idPost, params.idLingua, titulo, categoria, conteudo)) {
         response.ok({});
         return;
@@ -70,13 +69,6 @@ export default class PostsController {
 
     const uid = auth.user?.uid;
     const { ano, nomeAutor, sobrenomeAutor, titulo, tipo } = bibliografia;
-    const bibliografiaPadrao: IBibliografia = {
-      ano,
-      nomeAutor,
-      sobrenomeAutor,
-      titulo,
-      tipo,
-    };
     const { $attributes } = await Bibliografia.create({
       ano,
       nomeAutor,
@@ -85,10 +77,9 @@ export default class PostsController {
       tipo,
     });
     const { idBibliografia } = $attributes;
-    const bibliografiaFK = idBibliografia as number;
     await Promise.all([
-      bibliografiaService.create(bibliografiaPadrao, bibliografia),
-      postServices.create(uid, bibliografiaFK, linguaFK, tituloPostagem, categoria, conteudo),
+      bibliografiaService.create(idBibliografia, bibliografia),
+      postServices.create(uid, idBibliografia, linguaFK, tituloPostagem, categoria, conteudo),
     ]);
     response.created();
   };

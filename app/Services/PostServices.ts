@@ -1,6 +1,10 @@
 import Database from '@ioc:Adonis/Lucid/Database';
+import Artigo from 'App/Models/Artigo';
+import Bibliografia from 'App/Models/Bibliografia';
+import Livro from 'App/Models/Livro';
 import Postagem from 'App/Models/Postagem';
-import { ALL_LANGUAGES, categorias } from 'App/utils/utils';
+import Tese from 'App/Models/Tese';
+import { ALL_LANGUAGES, categorias, tipoBibliografia } from 'App/utils/utils';
 
 export class PostServices {
   public create = async (
@@ -26,7 +30,22 @@ export class PostServices {
       .where({ idPostagem })
       .preload('uid', (data) => data.select('nome', 'sobrenome'))
       .preload('idBibliografia', (data) => data.select('*'));
-    return data;
+
+    const { bibliografiaFK } = data[0].$attributes;
+    let tmp = data[0].$preloaded.idBibliografia as Bibliografia;
+    const { tipo } = tmp.$attributes;
+    if (tipo === tipoBibliografia[0]) {
+      // Artigo
+      const artigo = await Artigo.findBy('bibliografia_fk', bibliografiaFK);
+      return { data, artigo };
+    } else if (tipo === tipoBibliografia[1]) {
+      //Tese
+      const tese = await Tese.findBy('bibliografia_fk', bibliografiaFK);
+      return { data, tese };
+    }
+    //Livro
+    const livro = await Livro.findBy('bibliografia_fk', bibliografiaFK);
+    return { data, livro };
   };
   public getPostByCategory = async (categoria: string, language = ALL_LANGUAGES) => {
     return await Database.from(Postagem.table)

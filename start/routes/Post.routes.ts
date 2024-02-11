@@ -5,7 +5,7 @@ export const postRoutes = () =>
     Route.get('/categorias', 'PostsController.getCategories');
     Route.get('/categorias/:categoria/:lingua', 'PostsController.getPostsByCategory');
     Route.post('/', 'PostsController.create');
-    Route.get('/:idLingua/:idPost', 'PostsController.getByID');
+    Route.get('/:idPost', 'PostsController.getByID');
     Route.put('/:idLingua/:idPost', 'PostsController.update');
     Route.delete('/:idLingua/:idPost', 'PostsController.delete');
     Route.get('/:id', 'PostsController.getAllPosts');

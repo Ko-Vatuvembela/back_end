@@ -43,6 +43,7 @@ export type QuoteMap = {
 export interface IBibliografia {
   idBibliografia?: number;
   titulo: string;
+  tipo: string;
   nomeAutor: string;
   sobrenomeAutor: string;
   ano: number;

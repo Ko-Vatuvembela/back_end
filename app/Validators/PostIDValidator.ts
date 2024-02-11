@@ -8,7 +8,7 @@ export default class PostIDValidator extends BaseValidator {
   public schema = schema.create({
     params: schema.object().members({
       idPost: schema.number([rules.unsigned()]),
-      idLingua: schema.number([rules.unsigned()]),
+      idLingua: schema.number.optional([rules.unsigned()]),
     }),
   });
 }

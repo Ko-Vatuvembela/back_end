@@ -21,17 +21,17 @@ export class PostServices {
     });
     return $attributes;
   };
-  public getByID = async (idPostagem: number, linguaFK: number) => {
+  public getByID = async (idPostagem: number) => {
     const data = await Postagem.query()
-      .preload('idLingua')
-      .where({ idPostagem, linguaFK })
-      .preload('uid', (data) => data.select('nome', 'sobrenome'));
+      .where({ idPostagem })
+      .preload('uid', (data) => data.select('nome', 'sobrenome'))
+      .preload('idBibliografia', (data) => data.select('*'));
     return data;
   };
   public getPostByCategory = async (categoria: string, language = ALL_LANGUAGES) => {
-    return language === ALL_LANGUAGES
-      ? await Postagem.query().where({ categoria })
-      : await Postagem.query().where({ categoria, linguaFK: language });
+    return await Database.from(Postagem.table)
+      .select('id_postagem', 'titulo')
+      .where({ categoria, lingua_fk: language });
   };
   public getCategories = () => {
     return categorias;

@@ -7,6 +7,7 @@ export default class extends BaseSchema {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id_bibliografia');
       table.string('nome_autor');
+      table.string('tipo');
       table.string('sobrenome_autor');
       table.string('titulo');
       table.integer('ano');

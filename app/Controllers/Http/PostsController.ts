@@ -6,7 +6,7 @@ import PostIDValidator from 'App/Validators/PostIDValidator';
 import PostValidator from 'App/Validators/PostValidator';
 import UpdatePostValidator from 'App/Validators/UpdatePostValidator';
 import CategoryValidator from 'App/Validators/CategoryValidator';
-import { ALL_LANGUAGES, categorias, niveis } from 'App/utils/utils';
+import { categorias, niveis } from 'App/utils/utils';
 import { IBibliografia } from 'App/types/types';
 import { BibliografiaService } from 'App/Services/BibliografiaService';
 import Bibliografia from 'App/Models/Bibliografia';
@@ -18,7 +18,7 @@ const bibliografiaService = new BibliografiaService();
 export default class PostsController {
   public getByID = async ({ request, response }: HttpContextContract) => {
     const { params } = await request.validate(PostIDValidator);
-    const post = await postServices.getByID(params.idPost, params.idLingua);
+    const post = await postServices.getByID(params.idPost);
     if (post.length) {
       response.ok(post);
       return;
@@ -33,11 +33,9 @@ export default class PostsController {
     const { params } = await request.validate(CategoryValidator);
     const { categoria, lingua } = params;
 
-    if (lingua !== ALL_LANGUAGES) {
-      if (!(await languageServices.getLanguageByID(lingua as number))) {
-        response.unprocessableEntity();
-        return;
-      }
+    if (!(await languageServices.getLanguageByID(lingua as number))) {
+      response.unprocessableEntity();
+      return;
     }
     response.ok(await postServices.getPostByCategory(categoria, lingua));
   };
@@ -49,7 +47,7 @@ export default class PostsController {
   };
   public delete = async ({ request, response }: HttpContextContract) => {
     const { params } = await request.validate(PostIDValidator);
-    if (await postServices.delete(params.idPost, params.idLingua)) {
+    if (await postServices.delete(params.idPost, params.idLingua as number)) {
       response.ok({});
       return;
     }
@@ -57,7 +55,7 @@ export default class PostsController {
   };
   public update = async ({ request, response }: HttpContextContract) => {
     const { params, conteudo, categoria, titulo } = await request.validate(UpdatePostValidator);
-    const post = await postServices.getByID(params.idPost, params.idLingua);
+    const post = await postServices.getByID(params.idPost);
     if (post.length) {
       if (await postServices.update(params.idPost, params.idLingua, titulo, categoria, conteudo)) {
         response.ok({});
@@ -71,18 +69,20 @@ export default class PostsController {
       await request.validate(PostValidator);
 
     const uid = auth.user?.uid;
-    const { ano, nomeAutor, sobrenomeAutor, titulo } = bibliografia;
+    const { ano, nomeAutor, sobrenomeAutor, titulo, tipo } = bibliografia;
     const bibliografiaPadrao: IBibliografia = {
       ano,
       nomeAutor,
       sobrenomeAutor,
       titulo,
+      tipo,
     };
     const { $attributes } = await Bibliografia.create({
       ano,
       nomeAutor,
       sobrenomeAutor,
       titulo,
+      tipo,
     });
     const { idBibliografia } = $attributes;
     const bibliografiaFK = idBibliografia as number;

@@ -41,7 +41,7 @@
         "error"
       ],
       "@typescript-eslint/no-unused-vars": "error",
-      "@typescript-eslint/naming-convention":"off"
+      "@typescript-eslint/naming-convention": "off"
     }
   },
   "eslintIgnore": [
@@ -88,6 +88,8 @@
     "@adonisjs/repl": "^3.1.0",
     "@adonisjs/view": "^6.2.0",
     "@faker-js/faker": "^8.0.2",
+    "@types/he": "^1.2.3",
+    "he": "^1.2.0",
     "luxon": "^3.4.0",
     "pg": "^8.11.3",
     "phc-bcrypt": "^1.0.8",

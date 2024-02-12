@@ -4,6 +4,7 @@ import QuoteIDValidator from 'App/Validators/QuoteIDValidator';
 import QuotesValidator from 'App/Validators/QuotesValidator';
 import UpdateQuotesValidator from 'App/Validators/UpdateQuotesValidator';
 import { QuoteMap } from 'App/types/types';
+import { decode } from 'he';
 
 const quotesServices = new QuoteServices();
 
@@ -56,5 +57,8 @@ export default class QuotesController {
   };
   public allQuotes = async ({ response }: HttpContextContract) => {
     response.ok(await quotesServices.allQuotes());
+  };
+  public random = async ({ response }: HttpContextContract) => {
+    response.ok(await quotesServices.random());
   };
 }

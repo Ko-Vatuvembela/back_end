@@ -1,6 +1,7 @@
 import Lingua from 'App/Models/Lingua';
 import Proverbio from 'App/Models/Proverbio';
 import { QuoteMap } from 'App/types/types';
+import { decode } from 'he';
 
 export class QuoteServices {
   public createQuote = async ({
@@ -21,6 +22,13 @@ export class QuoteServices {
   };
   public allQuotes = async () => {
     return await Proverbio.query().select('proverbio ', 'id_proverbio', 'lingua_fk');
+  };
+  public random = async () => {
+    const data = (
+      await Proverbio.query().select('proverbio', 'lingua_fk').orderByRaw('RANDOM()')
+    )[0];
+    const language = await Lingua.query().select('lingua').where('id_lingua', data.linguaFK);
+    return { proverbio: decode(data.proverbio), lingua: language[0].lingua };
   };
   public findQuoteByID = async (idProverbio: number) => {
     const proverbio = await Proverbio.query()

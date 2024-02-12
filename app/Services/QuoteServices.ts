@@ -1,3 +1,4 @@
+import Lingua from 'App/Models/Lingua';
 import Proverbio from 'App/Models/Proverbio';
 import { QuoteMap } from 'App/types/types';
 
@@ -19,9 +20,9 @@ export class QuoteServices {
     return $attributes;
   };
   public allQuotes = async () => {
-    return await Proverbio.query().preload('uid', (data) => data.select('nome', 'sobrenome'));
+    return await Proverbio.query().select('proverbio ', 'id_proverbio', 'lingua_fk');
   };
-  public findQuote = async (idProverbio: number) => {
+  public findQuoteByID = async (idProverbio: number) => {
     const proverbio = await Proverbio.query()
       .where('id_proverbio', idProverbio)
       .preload('uid', (data) => data.select('nome', 'sobrenome'));
@@ -30,8 +31,18 @@ export class QuoteServices {
     }
     return false;
   };
+  public findQuote = async (idProverbio: number) => {
+    const proverbio = await Proverbio.query()
+      .where('id_proverbio', idProverbio)
+      .preload('uid', (data) => data.select('nome', 'sobrenome'));
+    const language = await Lingua.query().select('lingua').where('id', proverbio[0].linguaFK);
+    if (proverbio[0]) {
+      return { proverbio: proverbio[0], lingua: language[0].lingua };
+    }
+    return false;
+  };
   public deleteQuote = async (idProverbio: number) => {
-    const quote = await this.findQuote(idProverbio);
+    const quote = await this.findQuoteByID(idProverbio);
     if (quote) {
       quote.delete();
       return true;

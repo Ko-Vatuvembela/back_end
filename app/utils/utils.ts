@@ -8,7 +8,7 @@ import Database from '@ioc:Adonis/Lucid/Database';
 
 export const getDate = () => {
   const date = new Date();
-  const day = date.getDay();
+  const day = date.getDate();
   const month = date.getMonth() + 1;
   const year = date.getFullYear();
 

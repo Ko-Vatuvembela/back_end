@@ -12,9 +12,9 @@ export default class QuotesController {
     const utilizadorFK = auth.user?.uid;
     const { explicacao, linguaFK, proverbio } = await request.validate(QuotesValidator);
     const newQuote: QuoteMap = {
-      explicacao,
+      explicacao: explicacao.trim(),
       linguaFK,
-      proverbio,
+      proverbio: proverbio.trim(),
       utilizadorFK,
     };
     response.created(await quotesServices.createQuote(newQuote));

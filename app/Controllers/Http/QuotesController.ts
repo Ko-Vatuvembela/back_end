@@ -19,6 +19,7 @@ export default class QuotesController {
     };
     response.created(await quotesServices.createQuote(newQuote));
   };
+
   public findQuote = async ({ request, response }: HttpContextContract) => {
     const { params } = await request.validate(QuoteIDValidator);
     const quote = await quotesServices.findQuote(params.idProverbio);

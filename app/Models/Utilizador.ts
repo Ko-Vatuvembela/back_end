@@ -1,4 +1,4 @@
-import { BaseModel, beforeSave, column } from '@ioc:Adonis/Lucid/Orm';
+import { BaseModel, beforeSave, beforeUpdate, column } from '@ioc:Adonis/Lucid/Orm';
 import Hash from '@ioc:Adonis/Core/Hash';
 import { capitalize } from 'App/utils/utils';
 
@@ -33,9 +33,17 @@ export default class Utilizador extends BaseModel {
     utilizador.email = utilizador.email.toLocaleLowerCase().trim();
     utilizador.nome = capitalize(utilizador.nome).trim();
     utilizador.sobrenome = capitalize(utilizador.sobrenome).trim();
-    utilizador.foto = 'default_foto.jng';
+    if (!utilizador.foto) {
+      utilizador.foto = 'default.svg';
+    }
     if (Hash.needsReHash(utilizador.password)) {
       utilizador.password = await Hash.make(utilizador.password);
+    }
+  }
+  @beforeUpdate()
+  public static async checkHash({ password }: Utilizador) {
+    if (Hash.needsReHash(password)) {
+      password = await Hash.make(password);
     }
   }
 }

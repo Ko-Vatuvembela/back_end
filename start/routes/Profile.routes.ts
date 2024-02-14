@@ -6,7 +6,8 @@ export const profileRoutes = () =>
     Route.get('/logout', 'AuthController.logout');
     Route.delete('/:uid', 'UsersController.deleteUser');
     Route.get('/:uid', 'UsersController.findUser');
-    Route.put('/:uid', 'UsersController.updateUser');
+    Route.post('/', 'UsersController.updateUserImage');
+    Route.put('/', 'UsersController.updateUser');
   })
     .prefix('/profile')
     .middleware(['auth', 'enabledaccount']);

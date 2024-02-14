@@ -27,8 +27,11 @@ export class QuoteServices {
     const data = (
       await Proverbio.query().select('proverbio', 'lingua_fk').orderByRaw('RANDOM()')
     )[0];
-    const language = await Lingua.query().select('lingua').where('id_lingua', data.linguaFK);
-    return { proverbio: decode(data.proverbio), lingua: language[0].lingua };
+    if (data) {
+      const language = await Lingua.query().select('lingua').where('id_lingua', data.linguaFK);
+      return { proverbio: decode(data.proverbio), lingua: language[0].lingua };
+    }
+    return {};
   };
   public findQuoteByID = async (idProverbio: number) => {
     const proverbio = await Proverbio.query()

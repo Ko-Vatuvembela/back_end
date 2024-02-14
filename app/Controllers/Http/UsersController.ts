@@ -37,6 +37,7 @@ export default class UsersController {
     ]);
 
     const { nome, sobrenome, foto, uid } = datas[3];
+    console.log(datas[3]);
     response.created({ nome, sobrenome, foto, uid, email, ativada: false });
   };
   public findUser = async (ctx: HttpContextContract) => {
@@ -68,24 +69,47 @@ export default class UsersController {
       response.notFound();
     }
   };
+  public updateUserImage = async (ctx: HttpContextContract) => {
+    const { response, request, auth } = ctx;
+
+    if (auth.user) {
+      const { uid } = auth.user;
+      const foto = request.file('foto', {
+        extnames: ['jpg', 'jpeg', 'png', 'JPG', 'JPEG', 'PNG'],
+        size: '2mb',
+      });
+      if (foto) {
+        await foto.moveToDisk('./');
+        const fileName = foto.fileName as string;
+        const utilizador = await Utilizador.find(uid);
+        if (utilizador) {
+          await utilizador.merge({ foto: fileName }).save();
+          return response.ok({ foto: fileName });
+        }
+      }
+    }
+    response.unauthorized();
+  };
   public updateUser = async (ctx: HttpContextContract) => {
-    const { response, request } = ctx;
+    const { response, request, auth } = ctx;
     const payload = await request.validate(UpdateUserValidator);
-    const { nome, sobrenome, email, password, params } = payload;
-    const oldUser: UserType = {
-      nome: String(nome),
-      sobrenome: String(sobrenome),
-      email: String(email),
-      password: String(password),
-    };
-    const { uid } = params;
-    const user = await userServices.getUserByPK(uid);
+    const user = auth.user;
+
     if (user) {
-      const updatedUser = await userServices.updateUser(uid, oldUser);
-      response.ok(updatedUser);
-    } else {
+      const utilizador = await Utilizador.find(user.uid);
+      if (utilizador) {
+        if (payload.email) {
+          const findMail = await Utilizador.findBy('email', payload.email);
+          if (findMail && findMail?.uid !== user.uid) {
+            return response.conflict();
+          }
+        }
+        await utilizador.merge(payload).save();
+        return response.ok(payload);
+      }
       response.notFound();
     }
+    response.unauthorized();
   };
   public resetPassword = async (ctx: HttpContextContract) => {
     const { response, request } = ctx;

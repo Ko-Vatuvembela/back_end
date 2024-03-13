@@ -9,7 +9,6 @@ export default class DictionaryParamsValidator extends BaseValidator {
   public schema = schema.create({
     params: schema.object().members({
       idPalavra: schema.number([rules.unsigned()]),
-      idLingua: schema.number([rules.unsigned()]),
     }),
   });
 }

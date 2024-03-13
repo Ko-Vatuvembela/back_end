@@ -18,7 +18,7 @@ export default class DictionaryController {
     const id = await ClasseGramatical.query().where({ classeGramatical });
     if (id[0]) {
       const { idClasseGramatical } = id[0];
-      await dictionaryServices.create(
+      const data = await dictionaryServices.create(
         palavra,
         significado,
         idClasseGramatical,
@@ -26,14 +26,14 @@ export default class DictionaryController {
         linguaFK,
         auth.user?.uid
       );
-      return response.created({});
+      return response.created(data);
     }
     response.unprocessableEntity();
   };
   public findWord = async ({ request, response }: HttpContextContract) => {
     const { params } = await request.validate(DictionaryParamsValidator);
-    const { idLingua, idPalavra } = params;
-    const data = await dictionaryServices.findWord(idLingua, idPalavra);
+    const { idPalavra } = params;
+    const data = await dictionaryServices.findWord(idPalavra);
     if (data) {
       response.ok(data);
       return;

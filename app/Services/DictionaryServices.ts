@@ -58,7 +58,7 @@ export class DictionaryServices {
     }
     return true;
   };
-  public findWord = async (linguaFK: number, idPalavra: number): Promise<object | boolean> => {
+  public findWord = async (idPalavra: number): Promise<object | boolean> => {
     const significado = await Significado.query()
       .where('palavra_fk', idPalavra)
       .preload('idPalavra')

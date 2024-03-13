@@ -11,6 +11,6 @@ export default class DictionaryValidator extends BaseValidator {
     exemplo: schema.string([rules.minLength(5), rules.maxLength(255)]),
     palavra: schema.string([rules.minLength(2), rules.maxLength(45)]),
     linguaFK: schema.number([rules.unsigned()]),
-    classeGramaticalFK: schema.number([rules.unsigned()]),
+    classeGramatical: schema.string([rules.minLength(2), rules.maxLength(45)]),
   });
 }

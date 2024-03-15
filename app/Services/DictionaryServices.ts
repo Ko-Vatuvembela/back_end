@@ -47,7 +47,7 @@ export class DictionaryServices {
   public getWordsByLetter = async (linguaFK: number, initial: string) => {
     const palavra = await Palavra.query()
       .where('lingua_fk', linguaFK)
-      .whereLike('palavra', initial + '%');
+      .whereLike('palavra', initial.toLowerCase() + '%');
     return palavra;
   };
 

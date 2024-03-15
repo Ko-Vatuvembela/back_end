@@ -25,7 +25,7 @@ import { postRoutes } from './routes/Post.routes';
 import { quotesRoutes } from './routes/Quotes.routes ';
 import { profileRoutes } from './routes/Profile.routes';
 import { authRoutes } from './routes/Auth.routes ';
-import { dictionaryRoutes } from './routes/Dictionary.routes ';
+import { dictionaryRoutes } from './routes/Dictionary.routes';
 import { classeGramaticalRoutes } from './routes/ClasseGramatical.route';
 import { languageRoutes } from './routes/Language.routes';
 Route.group(() => {

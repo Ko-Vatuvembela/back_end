@@ -12,10 +12,10 @@ export class DictionaryServices {
     linguaFK: number,
     utilizadorFK: number
   ) => {
-    const findWord = await Palavra.findBy('palavra', palavra);
+    const findWord = await Palavra.findBy('palavra', palavra.toLocaleLowerCase().trim());
     if (findWord) {
       await Significado.create({
-        significado: significado.toLocaleLowerCase(),
+        significado: significado.toLocaleLowerCase().trim(),
         exemplo: string.capitalCase(exemplo.trim()),
         palavraFK: findWord.idPalavra,
         classeGramaticalFK,
@@ -24,7 +24,7 @@ export class DictionaryServices {
     } else {
       const newWord = await Palavra.create({
         linguaFK,
-        palavra: palavra.toLocaleLowerCase(),
+        palavra: palavra.toLocaleLowerCase().trim(),
         pronuncia: pronuncia.toLocaleLowerCase(),
       });
       await Significado.create({

@@ -1,34 +1,8 @@
 import Palavra from 'App/Models/Palavra';
+import { string } from '@ioc:Adonis/Core/Helpers';
 import Significado from 'App/Models/Significado';
 
 export class DictionaryServices {
-  // public create = async (
-  //   palavra: string,
-  //   significado: string,
-  //   classeGramaticalFK: number,
-  //   exemplo: string,
-  //   linguaFK: number,
-  //   utilizadorFK: number
-  // ) => {
-  //   const novaPalavra = await Palavra.firstOrCreate({ palavra, linguaFK }, { palavra });
-  //   const { idPalavra } = novaPalavra.$attributes;
-  //   const novoSignificado = await Significado.create({
-  //     significado,
-  //     classeGramaticalFK,
-  //     exemplo,
-  //     palavraFK: idPalavra,
-  //     utilizadorFK,
-  //   });
-  //   const { idSignificado } = novoSignificado.$attributes;
-  //   return {
-  //     idSignificado,
-  //     significado,
-  //     exemplo,
-  //     linguaFK,
-  //     idPalavra,
-  //   };
-  // };
-
   public create = async (
     palavra: string,
     significado: string,
@@ -40,8 +14,8 @@ export class DictionaryServices {
     const findWord = await Palavra.findBy('palavra', palavra);
     if (findWord) {
       await Significado.create({
-        significado,
-        exemplo,
+        significado: significado.toLocaleLowerCase(),
+        exemplo: string.capitalCase(exemplo.trim()),
         palavraFK: findWord.idPalavra,
         classeGramaticalFK,
         utilizadorFK,
@@ -49,8 +23,8 @@ export class DictionaryServices {
     } else {
       const newWord = await Palavra.create({ linguaFK, palavra });
       await Significado.create({
-        significado,
-        exemplo,
+        significado: significado.toLocaleLowerCase().trim(),
+        exemplo: string.capitalCase(exemplo.trim()),
         palavraFK: newWord.idPalavra,
         classeGramaticalFK,
         utilizadorFK,
@@ -71,12 +45,20 @@ export class DictionaryServices {
       .whereLike('palavra', initial + '%');
     return palavra;
   };
+
+  public searchWord = async (payload: string) => {
+    const palavra = await Palavra.query().whereLike(
+      'palavra',
+      '%' + string.capitalCase(payload) + '%'
+    );
+    return palavra;
+  };
   public updateWord = async (
     linguaFK: number,
     idPalavra: number,
     palavra: string
   ): Promise<object | boolean> => {
-    await Palavra.updateOrCreate({ idPalavra }, { palavra, linguaFK });
+    await Palavra.updateOrCreate({ idPalavra }, { palavra: string.capitalCase(palavra), linguaFK });
     return true;
   };
   public updateMeaning = async (significados: Array<Significado>): Promise<object | boolean> => {

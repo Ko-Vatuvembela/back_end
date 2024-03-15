@@ -6,6 +6,7 @@ import DictionaryIDValidator from 'App/Validators/DictionaryIDValidator';
 import DictionaryParamsValidator from 'App/Validators/DictionaryParamsValidator';
 import DictionaryValidator from 'App/Validators/DictionaryValidator ';
 import LanguageIDParamValidator from 'App/Validators/LanguageIDParamValidator';
+import SearchWordValidator from 'App/Validators/SearchWordValidator';
 import UpdateDictionaryValidator from 'App/Validators/UpdateDictionaryValidator';
 
 const dictionaryServices = new DictionaryServices();
@@ -45,6 +46,12 @@ export default class DictionaryController {
     const { idLingua, initial } = params;
     const data = await dictionaryServices.getWordsByLetter(idLingua, initial[0].toUpperCase());
     response.ok(data);
+  };
+  public searchWord = async ({ request, response }: HttpContextContract) => {
+    const { params } = await request.validate(SearchWordValidator);
+    const { payload } = params;
+    const data = await dictionaryServices.searchWord(payload.toLocaleLowerCase());
+    response.ok({ data });
   };
   public updateWord = async ({ request, response }: HttpContextContract) => {
     const { params, significados, palavra } = await request.validate(UpdateDictionaryValidator);

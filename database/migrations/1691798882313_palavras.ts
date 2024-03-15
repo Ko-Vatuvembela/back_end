@@ -7,6 +7,7 @@ export default class extends BaseSchema {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id_palavra').unsigned().primary();
       table.string('palavra', 45);
+      table.string('pronuncia', 45);
       table
         .integer('lingua_fk', 64)
         .unsigned()

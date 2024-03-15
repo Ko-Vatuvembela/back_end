@@ -10,6 +10,9 @@ export default class Palavra extends BaseModel {
   public palavra: string;
 
   @column()
+  public pronuncia: string;
+
+  @column()
   public linguaFK: number;
 
   @belongsTo(() => Lingua, { foreignKey: 'linguaFK' })

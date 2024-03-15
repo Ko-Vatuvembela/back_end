@@ -5,6 +5,7 @@ import Significado from 'App/Models/Significado';
 export class DictionaryServices {
   public create = async (
     palavra: string,
+    pronuncia: string,
     significado: string,
     classeGramaticalFK: number,
     exemplo: string,
@@ -21,7 +22,11 @@ export class DictionaryServices {
         utilizadorFK,
       });
     } else {
-      const newWord = await Palavra.create({ linguaFK, palavra });
+      const newWord = await Palavra.create({
+        linguaFK,
+        palavra: palavra.toLocaleLowerCase(),
+        pronuncia: pronuncia.toLocaleLowerCase(),
+      });
       await Significado.create({
         significado: significado.toLocaleLowerCase().trim(),
         exemplo: string.capitalCase(exemplo.trim()),
@@ -47,10 +52,7 @@ export class DictionaryServices {
   };
 
   public searchWord = async (payload: string) => {
-    const palavra = await Palavra.query().whereLike(
-      'palavra',
-      '%' + string.capitalCase(payload) + '%'
-    );
+    const palavra = await Palavra.query().whereLike('palavra', '%' + payload + '%');
     return palavra;
   };
   public updateWord = async (

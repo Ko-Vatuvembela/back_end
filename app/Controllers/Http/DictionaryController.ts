@@ -13,7 +13,7 @@ const dictionaryServices = new DictionaryServices();
 
 export default class DictionaryController {
   public create = async ({ request, response, auth }: HttpContextContract) => {
-    const { classeGramatical, exemplo, linguaFK, palavra, significado } =
+    const { classeGramatical, exemplo, linguaFK, pronuncia, palavra, significado } =
       await request.validate(DictionaryValidator);
 
     const id = await ClasseGramatical.query().where({ classeGramatical });
@@ -21,6 +21,7 @@ export default class DictionaryController {
       const { idClasseGramatical } = id[0];
       const data = await dictionaryServices.create(
         palavra,
+        pronuncia,
         significado,
         idClasseGramatical,
         exemplo,

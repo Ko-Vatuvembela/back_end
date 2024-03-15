@@ -81,7 +81,59 @@ export default class extends BaseSeeder {
         linguaFK: UMBUNDU,
         utilizadorFK: user?.uid,
       },
+      {
+        proverbio:
+          "A engi adilanga mu longa se adila va makaya, ay'adilanga va makaya se adila mu longa",
+        explicacao:
+          'Muitos dos que comem nos pratos comerão cedo ou tarde sobre as folhas e os que comem sobre as folhas comerão nos pratos. Este provérbio ensina-nos que tudo, neste mundo, está sujeito a inúmeras vicissitudes, e que ninguém sabe hoje de que será feito amanhã.',
+        data: '',
+        linguaFK: KIKONGO,
+        utilizadorFK: user?.uid,
+      },
+      {
+        proverbio:
+          'A engi avwandanga va kyandu, se avwanda va ntoto, avwandanga va ntoto se avwanda va kyandu(kyandi)',
+        explicacao:
+          'Muitos dos que se assentam nas cadeiras, assentar-se-ão no chão, e os que estão sentados no chão assentar-se-ão nas cadeiras. Este provérbio, significa que neste mundo tudo pode mudar.',
+        data: '',
+        linguaFK: KIKONGO,
+        utilizadorFK: user?.uid,
+      },
+      {
+        proverbio: "Afwidi mu vita ka ena lutangu ko, mun'atukidi ena ye lutangu lwau.",
+        explicacao:
+          'Os que morreram na guerra são inumeráveis. Contudo, são conhecidos pelas suas famílias, pelos seus nomes e números. Assim, durante a guerra, as famílias conhecem e choram os seus ente queridos mortos pela pátria, enquanto o estado os regista pelos seus nomes e soma o seu número.',
+        data: '',
+        linguaFK: KIKONGO,
+        utilizadorFK: user?.uid,
+      },
+      {
+        proverbio: 'Akento anati a nkalu za maza ye mafunda ma mambu.',
+        explicacao:
+          'As mulheres são portadoras das calabaças de água e dos embrulhos de bisbilhotices, isto é, as mulheres são mais boateiras do que os homens.',
+        data: '',
+        linguaFK: KIKONGO,
+        utilizadorFK: user?.uid,
+      },
+      {
+        proverbio: "<<Akento kumi ngi'au!>> - Ngeye mosi ukivunanga.",
+        explicacao:
+          "<</Tenho dez mulheres>>: Tens dez? Tu te enganas a ti mesmo. Estas tantas mulheres não são realmente todas tuas, pois 'quem muito abarca, pouco aperta'.",
+        data: '',
+        linguaFK: KIKONGO,
+        utilizadorFK: user?.uid,
+      },
+      {
+        proverbio:
+          'Akento nsambwadi anete nsengo nsambwadi ku nkoko atombokele ye ngandu nsambwadi, avo akala nsambwadi anete tanzi nsambwadi, wana simbi nsambwadi atomboka yau.',
+        explicacao:
+          "Sete mulheres foram ao rio com sete enxadas e trouxeram sete crocodilos. Se sete homens forem ao mesmo rio com sete machados, trarão certamente sete sereias. Este provérbio significa que 'as grandes causas produzem grandes efeitos.",
+        data: '',
+        linguaFK: KIKONGO,
+        utilizadorFK: user?.uid,
+      },
     ];
+
     await Proverbio.updateOrCreateMany('proverbio', quotesList);
   }
 }

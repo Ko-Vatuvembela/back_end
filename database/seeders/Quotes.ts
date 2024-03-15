@@ -116,9 +116,9 @@ export default class extends BaseSeeder {
         utilizadorFK: user?.uid,
       },
       {
-        proverbio: "<<Akento kumi ngi'au!>> - Ngeye mosi ukivunanga.",
+        proverbio: "'Akento kumi ngi'au!' - Ngeye mosi ukivunanga.",
         explicacao:
-          "<</Tenho dez mulheres>>: Tens dez? Tu te enganas a ti mesmo. Estas tantas mulheres não são realmente todas tuas, pois 'quem muito abarca, pouco aperta'.",
+          "'Tenho dez mulheres': Tens dez? Tu te enganas a ti mesmo. Estas tantas mulheres não são realmente todas tuas, pois 'quem muito abarca, pouco aperta'.",
         data: '',
         linguaFK: KIKONGO,
         utilizadorFK: user?.uid,

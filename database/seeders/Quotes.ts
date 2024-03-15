@@ -14,15 +14,15 @@ export default class extends BaseSeeder {
       languageID.set(lingua, id);
     });
     const UMBUNDU = languageID.get('Umbundu');
-    const KIMBUNDU = languageID.get('Kimbundu');
-    const COKWE = languageID.get('Cokwé');
-    const NGANGELA = languageID.get('Ngangela');
-    const OSHIKWANYAMA = languageID.get('Oshikwanyama');
-    const OLUNYANEKA = languageID.get('Olunyaneka');
     const KIKONGO = languageID.get('Kikongo');
-    const LINGALA = languageID.get('Lingala');
-    const FIOTE = languageID.get('Fiote');
-    const IBINDA = languageID.get('Ibinda');
+    // const KIMBUNDU = languageID.get('Kimbundu');
+    // const COKWE = languageID.get('Cokwé');
+    // const NGANGELA = languageID.get('Ngangela');
+    // const OSHIKWANYAMA = languageID.get('Oshikwanyama');
+    // const OLUNYANEKA = languageID.get('Olunyaneka');
+    // const LINGALA = languageID.get('Lingala');
+    // const FIOTE = languageID.get('Fiote');
+    // const IBINDA = languageID.get('Ibinda');
 
     const quotesList = [
       {

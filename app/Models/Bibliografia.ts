@@ -1,5 +1,5 @@
 import { BaseModel, beforeSave, column } from '@ioc:Adonis/Lucid/Orm';
-import { capitalize } from 'App/utils/utils';
+import { capitalize } from 'App/types/utils/utils';
 
 export default class Bibliografia extends BaseModel {
   public static get table() {

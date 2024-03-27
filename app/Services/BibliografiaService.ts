@@ -1,7 +1,7 @@
 import Livro from 'App/Models/Livro';
 import Artigo from 'App/Models/Artigo';
 import Tese from 'App/Models/Tese';
-import { tipoBibliografia } from 'App/utils/utils';
+import { tipoBibliografia } from 'App/types/utils/utils';
 
 export class BibliografiaService {
   public create = async (

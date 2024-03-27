@@ -2,7 +2,7 @@ import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext';
 import { UserServices } from 'App/Services/UserServices';
 import MailValidator from 'App/Validators/MailValidator';
 import Database from '@ioc:Adonis/Lucid/Database';
-import { getRandomNumbers, sendMail } from 'App/utils/utils';
+import { getRandomNumbers, sendMail } from 'App/types/utils/utils';
 import MailVerification from 'App/Models/MailVerification';
 import ConfirmationCodeValidator from 'App/Validators/ConfirmationCodeValidator';
 const userServices = new UserServices();

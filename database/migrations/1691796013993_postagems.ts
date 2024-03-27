@@ -1,5 +1,5 @@
 import BaseSchema from '@ioc:Adonis/Lucid/Schema';
-import { categorias } from 'App/utils/utils';
+import { categorias } from 'App/types/utils/utils';
 export default class extends BaseSchema {
   protected tableName = 'postagens';
 

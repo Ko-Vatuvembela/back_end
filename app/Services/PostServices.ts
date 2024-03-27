@@ -4,7 +4,7 @@ import Bibliografia from 'App/Models/Bibliografia';
 import Livro from 'App/Models/Livro';
 import Postagem from 'App/Models/Postagem';
 import Tese from 'App/Models/Tese';
-import { ALL_LANGUAGES, categorias, tipoBibliografia } from 'App/utils/utils';
+import { ALL_LANGUAGES, categorias, tipoBibliografia } from 'App/types/utils/utils';
 
 export class PostServices {
   public create = async (

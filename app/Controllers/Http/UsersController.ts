@@ -5,7 +5,7 @@ import { UserServices } from 'App/Services/UserServices';
 import UUIDValidator from 'App/Validators/UUIDValidator';
 import { UserType } from 'App/types/types';
 import Utilizador from 'App/Models/Utilizador';
-import { getRandomNumbers, mapUserType, sendMail, setRandomPassword } from 'App/utils/utils';
+import { getRandomNumbers, mapUserType, sendMail, setRandomPassword } from 'App/types/utils/utils';
 import Database from '@ioc:Adonis/Lucid/Database';
 import MailVerification from 'App/Models/MailVerification';
 import ForgotPasswordValidator from 'App/Validators/ForgotPasswordValidator';

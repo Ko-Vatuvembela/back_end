@@ -132,6 +132,57 @@ export default class extends BaseSeeder {
         linguaFK: KIKONGO,
         utilizadorFK: user?.uid,
       },
+      {
+        proverbio: "Aki nanzima, mbâlu antima anwaninanga ye manzunu ma nkele m'ankongo.",
+        explicacao:
+          'As civetas dizes: <<Lutamos contra as bocas de espingardas dos caçadores por causa da sua crueldade.>>. Refere-se as pessoas revoltadas que justificam a sua violência pela maldade excessiva dos seus inimigos.',
+        data: '',
+        linguaFK: KIKONGO,
+        utilizadorFK: user?.uid,
+      },
+      {
+        proverbio: "Akulu adya mbá (nzagi), atawul'e nkamfi.",
+        explicacao:
+          'Os antepassados comeram as nozes da palmeira e deitaram sobejos. Os antepassados cumpriram os seus deveres e transmitiram o facho às novas gerações. Agora é a vez destas de se mostrarem dignas da herança recebida.',
+        data: '',
+        linguaFK: KIKONGO,
+        utilizadorFK: user?.uid,
+      },
+      {
+        proverbio: 'Ak.',
+        explicacao: 'Set',
+        data: '',
+        linguaFK: KIKONGO,
+        utilizadorFK: user?.uid,
+      },
+      {
+        proverbio: 'Ak.',
+        explicacao: 'Set',
+        data: '',
+        linguaFK: KIKONGO,
+        utilizadorFK: user?.uid,
+      },
+      {
+        proverbio: 'Ak.',
+        explicacao: 'Set',
+        data: '',
+        linguaFK: KIKONGO,
+        utilizadorFK: user?.uid,
+      },
+      {
+        proverbio: 'Ak.',
+        explicacao: 'Set',
+        data: '',
+        linguaFK: KIKONGO,
+        utilizadorFK: user?.uid,
+      },
+      {
+        proverbio: 'Ak.',
+        explicacao: 'Set',
+        data: '',
+        linguaFK: KIKONGO,
+        utilizadorFK: user?.uid,
+      },
     ];
 
     await Proverbio.updateOrCreateMany('proverbio', quotesList);

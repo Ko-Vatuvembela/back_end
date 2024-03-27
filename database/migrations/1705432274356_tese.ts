@@ -1,5 +1,5 @@
 import BaseSchema from '@ioc:Adonis/Lucid/Schema';
-import { niveis } from 'App/utils/utils';
+import { niveis } from 'App/types/utils/utils';
 
 export default class extends BaseSchema {
   protected tableName = 'tese';

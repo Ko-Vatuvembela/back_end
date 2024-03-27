@@ -1,6 +1,7 @@
 import Lingua from 'App/Models/Lingua';
 import Proverbio from 'App/Models/Proverbio';
 import { QuoteMap } from 'App/types/types';
+import { MAX_ELEMENTS_PER_PAGE } from 'App/types/utils/utils';
 import { decode } from 'he';
 
 export class QuoteServices {
@@ -22,6 +23,11 @@ export class QuoteServices {
   };
   public allQuotes = async () => {
     return await Proverbio.query().select('proverbio ', 'id_proverbio', 'lingua_fk');
+  };
+  public getQuotesByPage = async (page: number) => {
+    return await Proverbio.query()
+      .select('proverbio ', 'id_proverbio', 'lingua_fk')
+      .paginate(page, MAX_ELEMENTS_PER_PAGE);
   };
   public random = async () => {
     const data = (

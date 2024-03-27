@@ -76,5 +76,6 @@ export const getRandomNumbers = (): Number => {
 };
 export const categorias = ['Fonologia', 'Morfologia', 'Sintaxe', 'Diversos'];
 export const niveis = ['Bacharelado/Licenciatura', 'Mestrado', 'Doutorado'];
+export const MAX_ELEMENTS_PER_PAGE = 10;
 export const tipoBibliografia = ['Artigo', 'Tese', 'Livro'];
 export const ALL_LANGUAGES = 200;

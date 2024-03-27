@@ -1,6 +1,6 @@
 import Database from '@ioc:Adonis/Lucid/Database';
 import { test } from '@japa/runner';
-import { createFakeUser } from 'App/utils/utils';
+import { createFakeUser } from 'App/types/utils/utils';
 import { UserType } from 'App/types/types';
 
 test.group('Testar a funcionalidades relacionadas ao email', (group) => {

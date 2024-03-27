@@ -1,6 +1,6 @@
 import { BaseModel, beforeSave, beforeUpdate, column } from '@ioc:Adonis/Lucid/Orm';
 import Hash from '@ioc:Adonis/Core/Hash';
-import { capitalize } from 'App/utils/utils';
+import { capitalize } from 'App/types/utils/utils';
 
 export default class Utilizador extends BaseModel {
   public static get table() {

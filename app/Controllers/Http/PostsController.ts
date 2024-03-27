@@ -6,7 +6,7 @@ import PostIDValidator from 'App/Validators/PostIDValidator';
 import PostValidator from 'App/Validators/PostValidator';
 import UpdatePostValidator from 'App/Validators/UpdatePostValidator';
 import CategoryValidator from 'App/Validators/CategoryValidator';
-import { categorias, niveis } from 'App/utils/utils';
+import { categorias, niveis } from 'App/types/utils/utils';
 import { BibliografiaService } from 'App/Services/BibliografiaService';
 import Bibliografia from 'App/Models/Bibliografia';
 

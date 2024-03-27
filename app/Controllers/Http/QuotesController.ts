@@ -1,5 +1,6 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext';
 import { QuoteServices } from 'App/Services/QuoteServices';
+import PageValidator from 'App/Validators/PageValidator';
 import QuoteIDValidator from 'App/Validators/QuoteIDValidator';
 import QuotesValidator from 'App/Validators/QuotesValidator';
 import UpdateQuotesValidator from 'App/Validators/UpdateQuotesValidator';
@@ -57,6 +58,10 @@ export default class QuotesController {
   };
   public allQuotes = async ({ response }: HttpContextContract) => {
     response.ok(await quotesServices.allQuotes());
+  };
+  public getQuotesByPage = async ({ response, request }: HttpContextContract) => {
+    const { params } = await request.validate(PageValidator);
+    response.ok(await quotesServices.getQuotesByPage(params.page));
   };
   public random = async ({ response }: HttpContextContract) => {
     response.ok(await quotesServices.random());

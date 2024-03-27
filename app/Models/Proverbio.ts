@@ -1,7 +1,7 @@
 import { BaseModel, BelongsTo, beforeSave, belongsTo, column } from '@ioc:Adonis/Lucid/Orm';
 import Lingua from './Lingua';
 import Utilizador from './Utilizador';
-import { getDate } from 'App/utils/utils';
+import { getDate } from 'App/types/utils/utils';
 
 export default class Proverbio extends BaseModel {
   @column({ isPrimary: true })

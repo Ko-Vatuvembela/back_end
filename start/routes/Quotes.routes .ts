@@ -8,5 +8,5 @@ export const quotesRoutes = () =>
     Route.put('/:idProverbio', 'QuotesController.updateQuote').middleware(MIDDLEWARE_LIST);
     Route.delete('/:idProverbio', 'QuotesController.deleteQuote').middleware(MIDDLEWARE_LIST);
     Route.get('/', 'QuotesController.allQuotes').middleware(MIDDLEWARE_LIST);
-    Route.get('/page/:page', 'QuotesController.getQuotesByPage');
+    Route.get('/page/:id/:page', 'QuotesController.getQuotesByPage');
   }).prefix('/quotes');

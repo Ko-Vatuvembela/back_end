@@ -24,10 +24,15 @@ export class QuoteServices {
   public allQuotes = async () => {
     return await Proverbio.query().select('proverbio ', 'id_proverbio', 'lingua_fk');
   };
-  public getQuotesByPage = async (page: number) => {
-    return await Proverbio.query()
-      .select('proverbio ', 'id_proverbio', 'lingua_fk')
-      .paginate(page, MAX_ELEMENTS_PER_PAGE);
+  public getQuotesByPage = async (id: number, page: number) => {
+    return id === 0
+      ? await Proverbio.query()
+          .select('proverbio ', 'id_proverbio', 'lingua_fk')
+          .paginate(page, MAX_ELEMENTS_PER_PAGE)
+      : await Proverbio.query()
+          .select('proverbio ', 'id_proverbio', 'lingua_fk')
+          .where('lingua_fk', id)
+          .paginate(page, MAX_ELEMENTS_PER_PAGE);
   };
   public random = async () => {
     const data = (

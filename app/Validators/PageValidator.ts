@@ -8,6 +8,7 @@ export default class PageValidator extends BaseValidator {
   public schema = schema.create({
     params: schema.object().members({
       page: schema.number([rules.unsigned()]),
+      id: schema.number([rules.range(0, 255)]),
     }),
   });
 }

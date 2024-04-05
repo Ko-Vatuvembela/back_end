@@ -61,7 +61,8 @@ export default class QuotesController {
   };
   public getQuotesByPage = async ({ response, request }: HttpContextContract) => {
     const { params } = await request.validate(PageValidator);
-    response.ok(await quotesServices.getQuotesByPage(params.page));
+    const { id, page } = params;
+    response.ok(await quotesServices.getQuotesByPage(id, page));
   };
   public random = async ({ response }: HttpContextContract) => {
     response.ok(await quotesServices.random());

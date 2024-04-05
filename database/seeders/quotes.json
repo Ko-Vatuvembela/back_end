@@ -1,0 +1,736 @@
+[
+  {
+    "proverbio": "Khanda wamba ngwo nguli munene, khumana aliko kanahiana.",
+    "explicacao": "Não digas que és grande, enquanto há maiores.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Uli kulutwe kexi kumuteta mucila.",
+    "explicacao": "Não se deve cortar a cauda a quem está em frente. Não estime quem estiver em frente, pois quem estiver a seguí-lo, pode ser o melhor ou primeiro a chegar à meta.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Kalimine camuvumine cimwe.",
+    "explicacao": "Não cultivou porque alguma coisa o impediu. Se alguém não terminou [...] algum impediu-lhe.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Ufuku kuwenda mbunga, cimbungu yasaukila.",
+    "explicacao": "Muitos andam à noite, mais só a hiena é que apanhada. Devido aos seus maus hábitos, assumirás a culpa dos outros.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Yakuwana kexi ku iseha.",
+    "explicacao": "Conversa encontrada não se ri. Não se ri de uma conversa encontrada, às vezes falam da sua família ou mesmo de ti.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Hanalila thambwe nyi imbungu hohene.",
+    "explicacao": "Onde comem os leões, comem as hienas. Onde come o chefe, o subordinado também deve comer lá.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Lunga mupema kexi kutala mu ndoho.",
+    "explicacao": "O bom marido não olha na panela. Grande homem é aquele não verifica na panela.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Ixi wa holekela mu lwiji katokele.",
+    "explicacao": "Peixe que caiu no rio, não se perdeu. O peixe não se perde no rio, pois é o seu habitat.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Mwana ixi kexi kutoka mu meya.",
+    "explicacao": "O filho do peixe não se perde na água 'rio'. A capacidade do indivíduo mede-se pelos seus atos. O peixe não se perde no rio, pois é o seu habitat.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Munwe umuwika uxi kwanda ina mu mutwe.",
+    "explicacao": "Um dedo não tira piolho na cabeça. A união faz a força.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Luiji yenda nyi ukawenyi ya henga.",
+    "explicacao": "O rio que andou sozinho ficou torto. Ninguém é melhor do que ninguém, devemos trabalhar em equipa, é com ajuda que as coisas correm bem, a união faz a força.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Cafwa ku uta yanga ce alia.",
+    "explicacao": "Caçador comerá o que irá matar. O caçador não lhe importa o quê irá caçar, o importante é caçar. Aquilo que matar-lhe-á servirá de mantimento.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Wali saswiya kexi nyi caswa.",
+    "explicacao": "Quem se acha não tem suporte. Quem mais grita não tem força. Cão que ladra não morde.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Ya hola ya kuswa.",
+    "explicacao": "O silêncio evita muita coisa. Manter-se calado evitam-se muitos males.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Undji wa masonde, andji kexi mazo mukanwa.",
+    "explicacao": "Multidão de kisonde(formigas grandes), muitos não têm dentes na boca. O facto de serem muitos não implica que todos têm força, uns apenas seguem o vento.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Ngoma nyi mu intezuka nyinguika ngwo mu iphulika.",
+    "explicacao": "Quando a batida de batuque começa aquecer é porque irá arrebentar. Quando as reclamações são constantes é porque algo não corre bem, e o fim de tudo é divisionismo.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Wa indama kexi kutwamina ku mbongo.",
+    "explicacao": "O azarado não deve estar próximo da ravina. Na sociedade há sempre um azarado, acusado em tudo, qualquer problema recai sobre ele, mesmo não cometendo erros. Evite estar em lugares onde falam mal de alguém, amanhã serás mencionado no problema.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Wambata nokwo mwe tatenu",
+    "explicacao": "Quem vive com a sua mãe é o seu pai, quem mantém a sua mãe é o seu pai. Deves contentar-te com o que tens e não satisfazer os outros com aquilo que não tens.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Phembe kalia ha usuku wa lonji",
+    "explicacao": "O cabrito come consoante o comprimento da sua corda, o cabrito come onde está amarrado. Deves contentar-te com o que tens e não satisfazer os outros com aquilo que não tens.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Calia mutfu Zambi wa cihana",
+    "explicacao": "O que a pessoa come, Deus é quem lhe dá. Quando achamos que não conseguimos alcançar os objetivos, ali Deus abre as portas.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Handa uwejela tfuswa ku mavuno",
+    "explicacao": "Não ajunte salale aos vermes. Numa resolução de problema não se deve buscar os pontos negativos, resolve apenas o problema em causa. Não se apaga o fogo com gasolina, os erros passados não podem ser relembrados.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Kumona una mona kexi kwambamo",
+    "explicacao": "Ver que está ver não se fala. O silêncio é a chave da sabedoria, não fale daquilo que viu, sem teres provas.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Wameka mweji, mwe walia senga jia mweji",
+    "explicacao": "Aquele que visita o doente, deste come-lhe a papa. Só come de outro aquele que visita.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Wenda waya nyi kulia",
+    "explicacao": "Quem anda vai comendo. Só come quem anda.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Kutfuma kanukhe kulivuma",
+    "explicacao": "Mandar uma criança é perder tempo.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Meneka mukwenu uli cize sonyi, capwile ngwe umucize lamba.",
+    "explicacao": "Visite o outro para te livrares da vergonha, e não para lhe livrares do sofrimento.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Liso liafwa tfulo mwali",
+    "explicacao": "Olho furado nele existe sonho. A deficiência não pode limitar os nossos sonhos.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Citondji mwene wa linyingika",
+    "explicacao": "O deficiente conhece a sua deficiência.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Lungonji wa xaha mulaya",
+    "explicacao": "A corda que mata é a preta, pois a branca todo o mundo vem. Quem vem os obstáculos vivem, só morre quem não ouve.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Nyi wa wana mbaci helu lia mutondo, nyingika ngwo mutfu wa musoho",
+    "explicacao": "Quando encontrares o cágado por cima de uma árvore, saibas que alguém o pôs lá.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Lunga umuwika katungu zuwo, hatumbula zuwo",
+    "explicacao": "Um homem só não constrói nem destrói uma casa. A união faz a força.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Sema wanukhe ukulwana utfume",
+    "explicacao": "Procrie enquanto jovem para mandares na idade adulta. O futuro prepara-se na juventude.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Sema phwo hamene umone lunga",
+    "explicacao": "Nasce mulher para amanhã ver homem.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Kumina luthongo munyenyo unalimono kutohwa",
+    "explicacao": "Ao engolir o luthongo(fruta silvestre existente na região leste de Angola) deve-se confiar com ânus. Quando se arranja conflitos, deve resolvê-los.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Weva kuzwa kalikula",
+    "explicacao": "Só se coça quem sente comichão. Só se preocupa quem está aflito.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Huma lia mukulwana lia huma indji",
+    "explicacao": "O olhar de mais velho evita muitos males. A presença de um chefe transmite um sentimento de segurança.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Thoto kahia nyi ciputamo",
+    "explicacao": "O mal se corta pela raiz.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Ximbi itangu nyi combo",
+    "explicacao": "Os primeiros depoimentos é que valem.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Wahandjikila ku mbunge kexi kuvulumuna",
+    "explicacao": "Quem fala no seu íntimo não peca.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Cahwa kumeso, kumbunge kuxili",
+    "explicacao": "Terminou no rosto, mais no coração mantém. O problema pode ser resolvido, mas a raiva ou sentimento existirá.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Enda ali kexi ku lihangulula",
+    "explicacao": "Quando se anda a dois não se duvida. Quando se anda há dois não se duvida das opiniões. A opinião de duas pessoas que andam juntas deve ser a mesma.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Mutala kumeya, mutala ku unga",
+    "explicacao": "Olhe na água, olhe na fuba. Na resolução de um problema deve-se resolver olhando em ambas as partes.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Mulonga wa combo kexi ku uhana kuli nguli",
+    "explicacao": "O problema do porco não se dá ao javali. O porco não pode resolver o problema do javali, pois ambos são da mesma espécie.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Wa pomba mwixi lia mutondo mwe weva kwona ca kajiya",
+    "explicacao": "Quem dorme por baixo da árvore em quem sente o ressonar do pássaro. Sente as dores quem vive os problemas, sente as dificuldades quem vive a realidade.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Hana ka kutokela tangwa nyi hamene he makutokela",
+    "explicacao": "Onde te escureceu o dia, amanhã vai te escurecer de novo. O esperto só almoça, não janta, quando lhe dão algum para depois devolver que o faça, amanhã pode precisar de novo.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Wali phuphula woca ha mwixi",
+    "explicacao": "O precipitado assou no fumo, o precipitado come cru.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Handa uteta ixi, ngwo au cihehe au mutwe",
+    "explicacao": "Não se divide o peixe e chamar as partes divididas de parte da cabeça e a parte da cauda. Pode até dividir-se o peixe e chamá-lo de parte da cabeça e da cauda, mas não deixará de ser chamado de peixe.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Seha weseke",
+    "explicacao": "Ri para medir. Não se ri da desgraça de outrem, amanhã poderá acontecer contigo ou ser sua vez.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Lumbundvu mutangu mwe wa xanga kaxitfu",
+    "explicacao": "A primeira bala é que mata o animal. O primeiro disparo é que mata o animal, pode até não morrer na hora, mas foi o primeiro disparo que o matou.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Ye akwamba!",
+    "explicacao": "É isto que te falam!",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Mwiji mukwata, handa mulandvula",
+    "explicacao": "Deve-se apanhar o gatuno, e não seguir as pegadas. Não se deve acusar alguém sem ter provas.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Cilondelela cafile ximba mulonji",
+    "explicacao": "A imitação fez matar o ximba(animal) na corda. Não se pode imitar o modo de vida de outrem, não se sabe como faz para conseguir viver a vida.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Kawa kalila ha ikola yenyi",
+    "explicacao": "O cão come através da sua dor, o cão come consoante o seu sacrifício.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Hana xahila njamba he atetela ifwo",
+    "explicacao": "Deve-se dividir a carne onde é morto o elefante. A divisão da carne deve ser feita no local, e não depois.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Kwita ca mukulwana kutala",
+    "explicacao": "O pedido de um mais velho está no olhar.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Wino wa kandandji, futo lia cikholokholo",
+    "explicacao": "A dança é do circuncidado, mas a oferta é do supervisor. Na vitória de uma batalha, apenas serão enaltecidos os chefes de batalha.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Ha fila lunga ha hwekha",
+    "explicacao": "Onde morre o homem, fica vazio. Quando morre um pai de família, ele deixa um vazio enorme.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Wasala mu ikulu mwe wafuta mapanza",
+    "explicacao": "O sucessor é quem paga as dívidas.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Ngombo ya kawa mwene wa imwanga",
+    "explicacao": "O poder que é-nos dado, nós mesmo é quem destruímos. A progressão da vida depende de si.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Semi mukulu nyi neye ka kuwonda",
+    "explicacao": "Uma mãe de vários partos pode apertar ou matar o filho. Nem todos os dias são iguais.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Yamwangana ixi kuswa",
+    "explicacao": "Quando algo se despeja, não voltará a mesma quantidade. Resolver os problemas não significa que a confiança ou amizade anterior será a mesma.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Citala ngeji",
+    "explicacao": "Já lhe conhecemos. É a pessoa que fala coisa com coisa e todo o mundo já o conhece como um falador.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Kaxitfu munene ka mulia nyi mwata",
+    "explicacao": "Animal grande come-se com o rei. Quando se come o animal grande com o rei não se terá problema de quem o matou.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Handa utala haze wa limbukila, tala haze wa lititfutfula",
+    "explicacao": "Não veja ou verifique onde caíste, preocupe-se em saber onde tropeçaste.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Lumbulu wa kwata kuli mwana khai nyi naye kamu kwata",
+    "explicacao": "A dor do sofrimento de um filho quem a sente é a mãe.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+
+  {
+    "proverbio": "Khekhe ya lile mu lemba",
+    "explicacao": "O sentimento fez matar o proprietário. Nem toda ajuda é boa, podemos pagar caro por ajudar alguém.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Kawa mulembe maji welo kukangoloxi.",
+    "explicacao": "Cão esfrega-lhe óleo, o comportamento é de tarde. Para conheceres pontos negativos ou positivos deves morar com a pessoa.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Kumafuka nyi kuna hola kexi ku kongako mbulu.",
+    "explicacao": "Quando há (silêncio) no cemitério, não se atira lá pedra. Não insultem o dragão em digestão.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Sonyi lia yami, lamba liya yena",
+    "explicacao": "A vergonha é minha, pobreza é a tua. Não se sinta ofendido, vá à luta, pois amanhã a pobreza será daqueles que um dia zombaram-te.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Mukeza keta yoze wa tfukile",
+    "explicacao": "Hás de pedir a quem ofendeste.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Ximbi ili kumbunge handa uilweza phwo lia kunyima ukalikate nyi kapita wa kumbonge",
+    "explicacao": "Não deves contar os seus segredos à sua amada para não seres amigo da polícia.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Wazeya waya nyi ngwali",
+    "explicacao": "O obediente levou o perdiz. A obediência faz com que certas portas sejam abertas.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Kanukhe mulionge nyi cilwa ca lutfundvu",
+    "explicacao": "A criança mente-se com a casca de jingenga. Para se libertar do problema da criança, dê-lhe a carne na parte de osso.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Kexi matwe nyi cinyi kufwa",
+    "explicacao": "O fim de quem não tem ouvido é a morte. O salário de quem não tem ouvido é a morte.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Kexi makuna kalimeneka",
+    "explicacao": "Quem não tem onde dormir madruga-se. Quando fores viajar a uma cidade nova, que tenhas lá família, deve-se madrugar-se, para chegares de dia e teres um lugar para dormir.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Mbota nyi masumana kumbunge kwa musula",
+    "explicacao": "O sapo quando morde, é porque perdeu a paciência. A impaciência leva-nos a cometer erros.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Mutfu wafila mu lwiji mitondo ikwate kwate",
+    "explicacao": "Pessoa que morre no rio, tudo que lhe aparece à frente segura. Quando a pessoa está para morrer afogada, pega em tudo que lhe aparece à frente para tentar se salvar.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Mutfu kexi ku lifila",
+    "explicacao": "A pessoa não morre por si. Quem morre sempre tem um culpado.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Kutwama ha citwamo kuzeya munyenyio",
+    "explicacao": "Sentar na cadeira é amolecer as nádegas. Aceitar um trono e ter sabedoria para geri-lo.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Kasulu wapalikoho unga wa mwangine",
+    "explicacao": "Lagartixa que passou a fuba não despejou. Não relevar a situação, devemos ignorar certos problemas.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Mujimo lia mbala kexi ku ngiyamo nyi yala",
+    "explicacao": "Na barriga dos outros não se entra lá com as unhas. Quando fores resolver problema de outrem, não agite, deia solução.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Fuji ya mandavu muxitfu umwikha",
+    "explicacao": "Na corrida dos macacos, a floresta é a mesma. A corrida de todo o estudante é terminar um ciclo, não importa se irá reprovar, enquanto não desistir irá terminá-lo.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Kawa yeva sonyi, yena uselesele",
+    "explicacao": "O cão teve vergonha, hoje anda nu. Não tenhas receio de solicitar uma ajuda ou auxílio, é com ajudas que melhoramos, quem fala não se perde.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Mwa waya wafwa nyi khoxi",
+    "explicacao": "O inocente morre com aplausos. Os inocentes só aplaudem.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Combo ma cilia mu munda wa kanukhe",
+    "explicacao": "Javali que está ainda por comer na lavra do menor. É o problema que está com outrem.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Cambala kexi kucixikila manguji",
+    "explicacao": "No alheio não se fixa pilares. Não se envaideça com coisas alheias, tarde ou cedo o dono terá de volta, e você estará envergonhado a quem humilhaste.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Nvula mukehe mba kasumbi masanda",
+    "explicacao": "Pouca chuva para que a galinha desbrave. Só permanece na chuva quando é pouca, quando for tanta procurarás refúgio.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Wongele ngulungu mbalu kexi ku monga",
+    "explicacao": "O ngulungu(animal) se mente mas o coelho não se mente. A mentira tem sempre pernas curtas.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Pengo khanda ciwema mu kiya",
+    "explicacao": "O rato que ainda não queimou a cauda. Quem já viveu a realidade não comete mesmo erro.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Lela mwana phembe mwana kawa hamene makusuma",
+    "explicacao": "Cuide de um filhinho de cabrito, mas se cuidar o filhinho de cão amanhã poderá morder-te. Na maior parte das situações é uma verdade que se você cuida alguém e quando essa pessoa singrar na vida já não reconhecerá quem um dia o ajudou. Mas do contrário também existe.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Macambila mu kwenu",
+    "explicacao": "Ainda estão por falar do outro. Rimos nós quando se fala mal de outro, esquecendo que amanhã poderá acontecer connosco.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Kacokwe kexi ku muvuluka",
+    "explicacao": "Não se cita o nome do Kacokwe. Logo que você cite o nome de Cokwe, ele aparece.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Kexoho kexi ku mutfulikila",
+    "explicacao": "Não se guarda [...] a quem não está. Quem estiver ausente não lhe guardam a refeição.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Walwa walwa ikuma ikuma",
+    "explicacao": "Bebida a parte, brincadeira a parte. Quando alguém o falar mal pela bebedeira, saiba que mesmo consciente te fala mal.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Kaxinakaji nyi neye nyi wino wenyi",
+    "explicacao": "Idosa também tem a sua dança. Não se julga o livro pela capa, a juventude não define qualidades, não julguem as pessoas por serem velhas, também têm as suas qualidades.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Combo mulie cikonda mwene walia",
+    "explicacao": "Tu comeste a pele do javali, comeste próprio javali. O crime não se mede pelo seu tamanho, tudo é crime.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Cixika xicika, akwenu hapalika",
+    "explicacao": "Frio frio, outros já passaram. Enquanto ficas falando da negatividade dos outros, eles estão a se organizar, quando verificares estão bem organizados.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Weta mwanangana",
+    "explicacao": "Que pede é rei. A coragem de um homem vê-se pelos seus atos. Todo o rei é corajoso em resolver problemas sem vergonhas.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+
+  {
+    "proverbio": "Walia ifwo kavulama wambata kupu keuluka",
+    "explicacao": "Quem come a carne esquece, mas quem leva a pele não esquece. Só se recordará do animal quem levou a pele, porém, aquele que comeu a carne se esquecerá do animal. A mulher só se recorda do presente.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Wakuhanga ka kwaha cihela",
+    "explicacao": "Quem te manda ir embora te dá um lar. Não maltrate ao seu próximo, amanhã só pertence a Deus.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Calinaco ce alilamwina",
+    "explicacao": "Ajuda-se com o que se tem.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Nyi unakwata ku lambu lia noko weno una kwata num.",
+    "explicacao": "Quando segurar nas vestes da sogra deve segurar mesmo. Não se brinca com a bondade de uma sogra.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Na mwenele imwe nyi ngindvu munyima",
+    "explicacao": "Já vi imwe com ngindvu atrás. Não diga que já viu tudo, melhores coisas surgirão.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Twa kulia ku sonyi, tfuxi ku handjikiya kusonyi",
+    "explicacao": "Comemos com vergonha, mas não falamos com vergonha. Quando tiver que falar, fale mesmo e não tenha a vergonha das pessoas que lá estiverem.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Katfutfu wa xaha ulo kwixi lia muhela atwama",
+    "explicacao": "A formiga que estraga o lar, está abaixo da cama. Todo o problema tem um princípio.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Paza mbuli wa lihicikile",
+    "explicacao": "A dívida foi deixada pelo bagre. Não sou primeiro nem serei o último a obter dívidas.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Kusema ca ndemba cali yaya nyi ana",
+    "explicacao": "Ao nascer do galo, a galinha foi com as crias. Tudo têm o seu prioritário.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Fuji ikulu kexi ku ilandjiya kawa mwaha",
+    "explicacao": "A corrida antiga não se compra novo cão. Não se compra um cão novo, confiando com o antigo pelo qual corria tanto.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Ximbi ya cimbinda ku kangoloxi",
+    "explicacao": "Informação do lerdo em à tarde. A informação de um lerdo, só é válida após acontecer. Só se acredita num lerdo, depois do acontecimento.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Kwaya mele kwaya mwana",
+    "explicacao": "Aonde vão os seios vai à criança. Os filhos seguiram sempre a mãe. Onde ela for os filhos irão.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Ca azanga vuli ku usaki",
+    "explicacao": "O que gosta o vuli é na floresta. A verdade tarde, mas chega.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Cikulo kacanda, kexi Kucilanda",
+    "explicacao": "O que é antigo/velho apanha-se, não se compra. Não se compra coisa antiga, para que amanhã não tenhas problemas com o vendedor.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Mukixi sunyi alambanyina",
+    "explicacao": "O palhaço bate por vergonha. As faltas de respeitos fazem com que as pessoas partem para agressão.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Usuku wa mukwenu kexi ku undjilila mu lwiji",
+    "explicacao": "Não se deve entrar no rio através da altura de outrem. Ao imitar algum, deves ter certeza do que irás imitar bem, nem tudo que brilha é ouro.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Kwenda ca phenzu kasumbi ya civila toto",
+    "explicacao": "A galinha teve ódio do andar da barata. Talvez você se pergunte o porquê da galinha sempre que vê a barata têm que a matar. Olhando para o tamanho da barata, a galinha não teria tanto ódio. Mas a beleza, sabedoria, vaidade e o brilho levou a galinha a odiar a barata para o resto da sua vida, e sempre que vê a barata deve matá-la e comê-la. O nosso brilho ou a luz dos nossos feitos faz com que muitos nos odeiem sem motivo. Perdemos vidas por sermos o que somos. O inimigo nunca está distante, é o mesmo a quem contamos os nossos segredos.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Lusumu wa munyima",
+    "explicacao": "Ventosa das costas. O feitiço vira contra o feiticeiro.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Kucaca ndjamba kokesa ifwaha",
+    "explicacao": "Esquartejar o elefante é aumentar os ossos. Falar muito é causar problemas, devemos ser objetivos na abordagem dos problemas e não tocar nos pontos negativos ou erros passados.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Mbuto haxi mbuto mu kanwa",
+    "explicacao": "Semente na boca, semente na terra. Todos os nossos rendimentos devem ser investidos além da alimentação que é um bem necessário.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Muteto wa mwana khai unaxahisa naye",
+    "explicacao": "Grito do filhinho da gazela fez matar a mãe. Quando um filho conta-te que foi agredido ou alguém está a ser agredido, não corras às pressas, mantenha a calma, pois ser fores às pressas será vítima [morto].",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Khai nyi ciputa pelekenye",
+    "explicacao": "Seixa com arbusto. Ao fazer mal a alguém, pense na família que essa pessoa sustenta.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Phwoko ya fuka nyi ifwo ya pola",
+    "explicacao": "Faca desfiada e carne podre. A faca desfiada só corta a carne podre. Carne podre e a faca desfiada ambos são iguais.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  },
+  {
+    "proverbio": "Ca kapindji cikapole",
+    "explicacao": "O que é de escravo que apodreça. O escravo não tem voz perante o seu dono, quando ele vem as coisas ruins limita-se apenas olhando.",
+    "data": "",
+    "linguaFK": "Cokwé"
+  }
+]
